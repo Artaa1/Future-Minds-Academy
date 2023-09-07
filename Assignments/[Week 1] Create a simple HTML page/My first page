@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            My first Website
+        </title>
+    </head>
+    <body>
+        <h1>
+            Arta Shaqiri
+        </h1>
+        <p>
+            Pershendetje une jam <strong>Arta Shaqiri</strong> dhe jetoj ne <strong>Gjilan</strong>.
+             Jam inxhiniere e 
+             <i>
+                Komunikacionit
+            </i>
+             dhe vazhdoj studimet master, ne drejtimin 
+             <i>
+                Termoenergjetike dhe Termoteknike.
+            </i>
+        </p>
+        <p>
+            Me pelqen te merem me kodim, e po shpresoj qe ne te ardhmen te behem programere.
+        </p>
+        <p> 
+            Mendoj se jam komunikative dhe e perkushtuar ne pune, e po shpresoj qe do te pershtatem ne boten e programimit.
+        </p>
+        <p>
+            Ne rrjetet sociale mund te me gjeni ne 
+                <a href="https://www.facebook.com/arte.shaqiri" target="_blank">
+                <strong>
+                    <i>
+                        Facebook
+                    </i>
+                 </strong>
+                </a>
+            dhe ne
+                <a href="https://www.instagram.com/artashaqiri9/" target="_blank">
+                    <strong>
+                        <i>
+                            Instagram
+                        </i>
+                    </strong>
+                </a>
+            </p>
+            
+            <p>
+                Hobi im eshte leximi dhe me pelqen te shoh edhe filma.
+            </p>
+            <p>
+                Filmat qe me kan pelqyer me se shumti jane:
+                <ol>
+                    <li>
+                        Titanik
+                    </li>
+                    <li>
+                        Frozen
+                    </li>
+                    <li>
+                        Lingo Lingo
+                    </li>
+                </ol>
+            </p>
+        <p>
+            Qellimet e vijimit te ketij kursi jane:
+            <ul>
+                <li>
+                    Te aftesohem ne HTML
+                </li>
+                <li>
+                    Te aftesohem ne CSS dhe
+                </li>
+                <li>
+                   Te kem me shume njohuri ne Java Script 
+                </li>
+            </ul>
+         </p> 
+         <p>
+            Po shpresoj qe te aftesohem sa me shume ne gjuhe programuese, pastaj ne te ardhmen ti kryej detyrat qe me takojne ne menyren me precize.
+         </p> 
+         <p>
+            Po besoj qe kam bere nji prezantim, sa me te lehte per tu kuptuar nga ju. 
+         </p>  
+         <p>
+            E per cdo paqartesi me shenoni ne
+            <strong>
+                e-mailin 
+            </strong>
+            tim: 
+            <a 
+               href="mailito:aa.artaa@hotmail.com">Dergo Email 
+            </a>
+         </p>
+         <p>
+            Degjohemi per pune te mira.
+         </p>
+
+    </body>
+</html>
