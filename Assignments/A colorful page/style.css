@@ -1,0 +1,71 @@
+body {
+    margin: 80px 80px;
+    background: linear-gradient(0deg, rgba(140, 173, 185, 0.985) 0%, rgba(247, 247, 247, 1) 100%);
+}
+
+main {
+    background-image: url(images/cheff.jpg);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.figure {
+    text-align: center;
+    font-size: 20px;
+    color: brown;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+p {
+    background: rgb(119, 170, 180);
+    background: linear-gradient(270deg, rgba(119, 170, 180, 0.2) 0%, rgba(193, 255, 133, 0.5) 95%);
+    padding: 8px 20px;
+    width: 600px;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 35px;
+    color: brown;
+}
+
+.title {
+    text-align: center;
+    font-family: Copperplate, Papyrus, fantasy;
+    text-decoration-line: underline;
+    color: black;
+    text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px bisque;
+    font-size: 45px;
+}
+
+.second-title {
+    text-align: left;
+    font-family: Copperplate, Papyrus, fantasy;
+    text-decoration-line: underline;
+    text-shadow: 2px 2px 5px brown;
+    font-size: 35px;
+}
+
+.time {
+    font-size: 20px;
+}
+
+.ingredients {
+    background: rgb(119, 170, 180);
+    background: linear-gradient(270deg, rgba(119, 170, 180, 0.27) 0%, rgba(174, 168, 51, 0.2) 95%);
+    font-size: 20px;
+    width: 600px;
+}
+
+footer {
+    color: brown;
+    font-size: 20;
+    font-family: Copperplate, Papyrus, fantasy;
+}
