@@ -15,6 +15,7 @@ p {
 }
 
 p.highlight:hover {
+    color: aqua;
     background-color: burlywood;
 }
 
