@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+p {
+    margin-left: 10%;
+    box-shadow: 3px 0px 5px grey;
+    padding: 25px 10px;
+    width: 500px;
+
+}
+
+h1 {
+    margin-left: 13%;
+    position: relative;
+    bottom: -35px;
+}
+
+img {
+    position: absolute;
+    right: 610px;
+    top: 75px;
+}
+
+iframe {
+    padding: 15px 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    height: 30%;
+   
+}
+
+.one {
+    background-color: red;
+    color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 71px;
+    left: 632px;
+
+}
+
+.two {
+    background-color: red;
+    color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 250px;
+    left: 632px;
+
+}
+
+.thre {
+    background-color: red;
+    color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 71px;
+    left: 632px;
+
+}
+
+.four {
+    background-color: red;
+    color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 71px;
+    left: 632px;
+
+}
+
+.five {
+    background-color: red;
+    color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 71px;
+    left: 632px;
+
+}
