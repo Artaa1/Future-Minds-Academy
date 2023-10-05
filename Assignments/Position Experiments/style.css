@@ -1,27 +1,38 @@
 body {
     margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }
 
-p {
-    margin-left: 10%;
-    box-shadow: 3px 0px 5px grey;
-    padding: 25px 10px;
+.box1,
+.box2,
+.box3,
+.box4,
+.box5 {
+
+    position: relative;
+    top: 10px;
+    left: 50px;
     width: 500px;
 
 }
 
-h1 {
-    margin-left: 13%;
-    position: relative;
-    bottom: -35px;
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 3px solid whitesmoke;
+    box-shadow: 5px 5px 5px grey;
+    padding: 20px 10px;
+    width: 500px;
 }
 
-img {
-    position: absolute;
-    right: 610px;
-    top: 75px;
+.H1,
+.H2,
+.H3,
+.H4,
+.H5 {
+    font-weight: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    bottom: -35px;
+    left: 15px;
 }
 
 iframe {
@@ -30,61 +41,17 @@ iframe {
     border-style: solid;
     border-radius: 5%;
     position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 25%;
+    bottom: 30px;
+    right: 30px;
+    width: 20%;
     height: 30%;
 
 }
 
-.one {
-    background-color: red;
-    color: white;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 50%;
-    position: absolute;
-    top: 71px;
-    left: 632px;
-
-}
-
-.two {
-    background-color: red;
-    color: white;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 50%;
-    position: absolute;
-    top: 221px;
-    left: 632px;
-
-}
-
-.thre {
-    background-color: red;
-    color: white;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 50%;
-    position: absolute;
-    top: 371px;
-    left: 632px;
-
-}
-
-.four {
-    background-color: red;
-    color: white;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 50%;
-    position: absolute;
-    top: 521px;
-    left: 632px;
-
-}
-
+.one,
+.two,
+.thre,
+.four,
 .five {
     background-color: red;
     color: white;
@@ -92,7 +59,7 @@ iframe {
     border-style: solid;
     border-radius: 50%;
     position: absolute;
-    top: 671px;
-    left: 632px;
+    top: 52px;
+    left: 514px;
 
 }
