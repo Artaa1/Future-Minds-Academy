@@ -1,0 +1,426 @@
+html {
+    cursor: url(images/112081.png), auto;
+}
+
+body {
+    margin: 1em 10% 0 10%;
+    background-image: url(images/background\ image2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.firstul {
+    text-align: center;
+}
+
+h1 {
+    color: black;
+    text-shadow: 1px 1px 2px azure, 0 0 10px darkcyan, 0 0 3px darkblue;
+    text-align: center;
+    font-size: 2.8em;
+
+}
+
+.myproject {
+    padding: 1%;
+    text-align: center;
+    display: inline;
+    border: 2px solid rgb(49, 48, 47);
+    border-radius: 1em;
+    text-align: center;
+}
+
+.contactme {
+    padding: 1%;
+    text-align: center;
+    display: inline;
+    border: 2px solid rgb(49, 48, 47);
+    border-radius: 1em;
+    text-align: center;
+
+}
+
+.mephoto {
+    border: 2px solid rgb(49, 48, 47);
+    border-radius: 1em;
+    box-shadow: 3px 3px 3px 3px #2f5e5a;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.firstparagraph {
+    text-align: start;
+}
+
+a {
+    text-decoration: none;
+    cursor: url(images/112081.png), auto;
+}
+
+nav li:hover {
+    background-color: aquamarine;
+    color: blue;
+    padding: 1%;
+
+
+}
+
+h2 {
+    color: black;
+    text-shadow: 1px 1px 2px azure, 0 0 10px darkcyan, 0 0 3px darkblue;
+    text-align: center;
+    font-size: 2.0em;
+    font-weight: 1.1em;
+}
+
+.Personalinfo {
+    padding: 1%;
+    text-align: center;
+    background-color: #87dff5;
+    border: 2px solid none;
+    border-radius: 1em;
+}
+
+.Personalinfo:hover {
+    border: 2px solid black;
+    background-color: #ade2f0;
+    border-radius: 1em;
+    padding: 1%;
+
+}
+
+h3 {
+    text-align: center;
+    color: black;
+    text-shadow: 1px 1px 2px azure, 0 0 25px azure, 0 0 5px darkblue;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.education {
+    padding: 1%;
+    background-color: #84cadb;
+    border: 2px solid none;
+    border-radius: 1em;
+    text-align: start;
+
+}
+
+.education:hover {
+    border: 2px solid black;
+    background-color: #b9e3ed;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.primaryschool {
+    background-color: azure;
+    border: 2px solid darkblue;
+    border-radius: 1em;
+    padding: 2%;
+
+}
+
+.hightschool {
+    background-color: azure;
+    border: 2px solid darkblue;
+    border-radius: 1em;
+    padding: 2%;
+}
+
+.university {
+    background-color: azure;
+    border: 2px solid darkblue;
+    border-radius: 1em;
+    padding: 2%;
+}
+
+h4 {
+    text-align: center;
+    color: black;
+    text-shadow: 1px 1px 2px azure, 0 0 25px black, 0 0 5px darkblue;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.myskills {
+    border: 2px solid none;
+    border-radius: 1em;
+    background-color: #53a0b3;
+    padding: 1%;
+
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.first-tr {
+    background-color: #9fd5e3;
+}
+
+.second-tr {
+    background-color: #9fd5e3;
+}
+
+.myskills:hover {
+    background-color: #4dacc4;
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.Project {
+    border: 2px solid none;
+    border-radius: 1em;
+    background-color: #488e9f;
+    padding: 1%;
+}
+
+ol {
+    line-height: 2.5;
+}
+
+.Project:hover {
+    border: 2px solid black;
+    background-color: #74a8b5;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+h5 {
+    color: black;
+    text-shadow: 1px 1px 2px azure, 0 0 25px black, 0 0 5px darkblue;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    background-color: #7cbccc;
+    padding: 2%;
+    color: white;
+}
+
+.educationli {
+    color: grey;
+    list-style-type: none;
+}
+
+.educationnes {
+    list-style-type: square;
+}
+
+.home {
+    padding: 1%;
+    text-align: center;
+    display: inline;
+    border: 2px solid rgb(49, 48, 47);
+    border-radius: 1em;
+    text-align: center;
+    color: blue;
+}
+
+.heattransfer {
+    list-style-type: circle;
+    color: darkblue;
+    text-align: start;
+}
+
+.projectheat {
+
+    background-color: #8fd7eb;
+    border: 2px solid none;
+    border-radius: 1em;
+    padding: 2%;
+}
+
+.projectheat:hover {
+    border: 2px solid black;
+    background-color: #36b0d1;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.pageprojects {
+    text-align: start;
+}
+
+.temperature {
+    background-color: #69b3c7;
+    border: 2px solid none;
+    border-radius: 1em;
+    padding: 2%;
+}
+
+.undertittle {
+    font-size: 1.5em;
+    font-weight: 1em;
+    text-decoration: underline rgb(0, 28, 128);
+    color: darkblue;
+    text-align: left;
+}
+
+figcaption {
+    text-align: center;
+    padding: 2%;
+}
+
+.turbineul {
+    list-style-type: square;
+    color: aliceblue;
+    text-align: start;
+}
+
+.turbine {
+    text-align: center;
+    background-color: #73c5e6;
+    border: 2px solid none;
+    border-radius: 1em;
+    padding: 2%;
+}
+
+.exampelturbine {
+    padding: 2%;
+    text-align: center;
+    background-color: #5b8fa3;
+    border: 2px solid none;
+    border-radius: 1em;
+}
+
+.turbine:hover {
+    border: 2px solid black;
+    background-color: #6fa8bf;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.exampelturbine:hover {
+    border: 2px solid black;
+    background-color: #91cde6;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.page3 {
+    text-align: center;
+    background-color: #91cde6;
+    border: 2px solid none;
+    border-radius: 1em;
+    padding: 2%;
+}
+
+.page3:hover {
+    border: 2px solid black;
+    background-color: #6eb1cc;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.input {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-bottom: 2px solid blue;
+    background-color: azure;
+    box-shadow: 0 8px 16px 0 rgb(57, 57, 223), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.input:hover {
+    border: 2px solid black;
+    background-color: antiquewhite;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+textarea {
+    width: 60%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-radius: 4px;
+    background-color: azure;
+    font-size: 16px;
+    resize: none;
+    box-shadow: 0 8px 8px 0 rgb(57, 57, 223), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+textarea:hover {
+    border: 2px solid black;
+    background-color: antiquewhite;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+label {
+    font-size: 1.7em;
+}
+
+.button {
+    background-color: gainsboro;
+    border: 2px solid blue;
+    color: grey;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 antiquewhite, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: url(images/112081.png), auto;
+}
+
+.button:hover {
+    border: 2px solid black;
+    background-color: azure;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.fbinsta {
+    border: 2px solid rgb(49, 48, 47);
+    border-radius: 0.8em;
+    box-shadow: 3px 3px 3px 3px #2f5e5a;
+    padding: 0.5%;
+}
+
+.fbinsta:hover {
+    border: 2px solid black;
+    background-color: azure;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.acontact {
+    display: inline;
+}
+
+button,
+.projects3 {
+    background-color: #28419e;
+    color: black;
+    border: none;
+    border-radius: 10%;
+    position: relative;
+    top: -10px;
+}
+
+button:hover {
+    background-color: azure;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10%;
+    cursor: url(images/112081.png), auto;
+}
