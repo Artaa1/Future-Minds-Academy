@@ -159,6 +159,7 @@ table {
     width: 80%;
     border-collapse: collapse;
     text-align: center;
+    margin: auto;
 }
 
 .first-tr {
