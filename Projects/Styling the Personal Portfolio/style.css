@@ -372,7 +372,6 @@ label {
     background-color: gainsboro;
     border: 2px solid blue;
     color: grey;
-    padding: 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -387,7 +386,7 @@ label {
     border: 2px solid black;
     background-color: azure;
     border-radius: 1em;
-    padding: 1%;
+    padding: 10%;
 }
 
 .fbinsta {
