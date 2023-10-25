@@ -1,20 +1,26 @@
 body {
     margin: 0;
-    padding: 2em;
+   
     font-family: 'Dancing Script', cursive;
     display: flex;
     justify-content: center;
     align-content: center;
+    flex-wrap: wrap;
     background-color: aliceblue;
     border: 3px solid azure;
     border-radius: 10px;
 
 }
+.cards{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+   
+}
 
 .Card {
 
-    margin: 20px 25% 20px 25%;
-    width: 600px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     border: 3px solid #2a22bf;
@@ -45,7 +51,7 @@ body {
     padding: 10%;
     text-align: center;
     background-color: pink;
-    font-size: 3em;
+    font-size: 1.2em;
     color: #fc03a1;
 }
 
@@ -59,7 +65,7 @@ body {
     padding: 10%;
     text-align: center;
     background-color: lightskyblue;
-    font-size: 3em;
+    font-size: 1.2em;
     font-weight: 300px;
     color: blue;
 
@@ -67,25 +73,25 @@ body {
 
 .or {
     text-align: center;
-    font-size: 3em;
+    font-size: 1.2em;
     display: flex;
     align-items: center;
 }
 
 p {
     text-align: center;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .parents {
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: #f02637;
     text-shadow: 1px 1px 2px azure, 0 0 10px rgb(236, 102, 102), 0 0 3px darkblue;
 
 }
 
 img {
-
+    width: 250px;
     border: 2px solid rgb(108, 132, 253);
     border-radius: 20px;
     box-shadow: 0px 3px 5px 0px rgb(215, 98, 184);
