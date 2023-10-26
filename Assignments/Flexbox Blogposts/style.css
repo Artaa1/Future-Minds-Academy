@@ -8,22 +8,18 @@ body {
     display: flex;
     overflow-y: scroll;
     box-sizing: border-box;
+    flex-direction: row;
+
 
 }
 
-.aside {
-    flex: 1;
-    padding: 20px;
-}
+
 
 aside {
     width: 250px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
     background-color: #404a6e;
     box-sizing: border-box;
+
 }
 
 .aside-tittle {
@@ -34,6 +30,7 @@ aside {
     text-transform: uppercase;
     display: flex;
     text-align: right;
+
 
 }
 
@@ -50,7 +47,6 @@ aside {
 .aside-paragraph {
     margin: 0;
     display: flex;
-
     text-align: right;
     color: rgb(249, 231, 231);
     font-size: 1.5em;
@@ -77,27 +73,24 @@ aside {
     color: black;
 }
 
-.blog-container {
-    padding: 20px 0px 0px 20px;
-    flex: 4;
+.posts {
+    padding: 0px 0px 0px 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-
-}
-
-.pinned-description {
-    display: flex;
-    flex-direction: row;
 }
 
 .post-container {
-    width: 800px;
+    padding: 20px;
+    flex-grow: 2;
+    box-sizing: border-box;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 20px 0px 50px 0px;
-    position: relative;
-
 }
 
 
@@ -119,7 +112,12 @@ hr {
 
 }
 
-.pinned-undertittle {
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-undertittle {
     margin-top: 6px;
     color: grey;
     font-size: 0.9em;
@@ -152,14 +150,6 @@ hr {
 }
 
 
-.user {
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    top: 90px;
-    right: 30px;
-    border-radius: 50%;
-}
 
 .javascript {
     text-align: center;
@@ -169,8 +159,19 @@ hr {
     font-size: 0.9em;
 }
 
-.recent-undertittle {
-    margin-top: 6px;
-    color: grey;
-    font-size: 0.9em;
+.photo-user {
+    position: relative;
+    bottom: 200px;
+    left: -35px;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.userimage {
+    display: flex;
+    justify-content: flex-end;
 }
