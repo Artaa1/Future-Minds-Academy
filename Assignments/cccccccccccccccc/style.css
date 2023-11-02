@@ -43,3 +43,6 @@ li{
     text-decoration: underline red;
     font-size: 1.;
 }
+.list-item::before{
+    content: "- ";
+}
