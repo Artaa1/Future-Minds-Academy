@@ -14,7 +14,9 @@ body{
 }
 .green{
     background-color: lightgreen;
+    display: grid;
      grid-row: 2 / 3;
     grid-column: 1 / 5;
+    gap: 20px;
     
 }
