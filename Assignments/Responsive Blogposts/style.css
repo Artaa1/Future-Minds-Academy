@@ -23,7 +23,9 @@ aside {
     height: 100%;
     background-color: #404a6e;
     box-sizing: border-box;
-    display: flex;
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1/1;
     flex: 0 0 20%;
     flex-direction: column;
     justify-content: center;
@@ -38,6 +40,8 @@ aside {
     font-weight: bold;
     text-transform: uppercase;
     text-align: right;
+    display: flex;
+    flex-direction: column;
 
 
 }
@@ -55,6 +59,7 @@ aside {
 .aside-paragraph {
     margin: 0;
     display: flex;
+    flex-direction: column;
     text-align: right;
     color: rgb(249, 231, 231);
     font-size: 1.5em;
@@ -83,10 +88,10 @@ aside {
 
 .posts {
     width: 100%;
-    padding: 0px 0px 0px 20px;
+    padding: 20px 0px 0px 20px;
     box-sizing: border-box;
     flex-grow: 1;
-    
+
 
 }
 
@@ -181,4 +186,93 @@ hr {
     border: none;
     border-radius: 50%;
     cursor: pointer;
+}
+
+@media only screen and (max-width:640px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: grid;
+        overflow-x: none;
+    }
+
+    .blogposts-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        row-gap: 30px;
+        overflow-y: scroll;
+
+    }
+
+    aside {
+        width: auto;
+        height: 40vh;
+        padding: 50px 10px 10px 10px;
+        display: grid;
+        grid-column: 1 / 1;
+        grid-row: 1 / 2;
+
+
+
+    }
+
+    .posts {
+        width: 100%;
+        display: grid;
+        grid-column: 1 / 1;
+        grid-row: 2 / 3;
+        row-gap: 30px;
+        padding: 0px 0px 0px 20px;
+        box-sizing: border-box;
+        flex-grow: 1;
+        overflow-x: none;
+    }
+
+    .aside-tittle {
+        margin: 0;
+        font-size: 2.5em;
+        color: azure;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: start;
+        display: flex;
+        flex-direction: row;
+
+
+    }
+
+    .aside-details {
+        margin: 0px 30px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    .aside-paragraph {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        color: rgb(249, 231, 231);
+        font-size: 1.5em;
+
+
+    }
+
+    .button {
+        padding: 4px 10px 4px 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        color: white;
+        text-transform: uppercase;
+        border: 1px solid white;
+        cursor: pointer;
+    }
 }
