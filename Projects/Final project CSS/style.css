@@ -449,6 +449,9 @@ header {
     border-radius: 50%;
     content: attr(data-notifications);
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
