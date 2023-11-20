@@ -5,13 +5,6 @@
 * Browsers: last 4 version
 */
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 :root {
     --box-shadow-icon-color: rgba(0, 0, 0, 0.10);
     --box-shadow-icon-color-hover: 0 0 5px 2px rgba(0, 0, 0, 0.2);
@@ -19,8 +12,6 @@
     --menu-bar-color: orangered;
     --border-color-grids: #dfe5f0;
     --visit-undertitle-color: #80817d;
-
-
 
 }
 
@@ -76,9 +67,7 @@ body::-webkit-scrollbar-track {
     height: 100vh;
     overflow-y: scroll;
     -ms-grid-column: 2;
-
     -ms-grid-column-span: 1;
-
     grid-column: 2 / 3;
 }
 
@@ -87,7 +76,6 @@ body::-webkit-scrollbar-track {
     margin: 0;
     padding: 0;
     overflow-y: scroll;
-
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1 / 2;
@@ -108,7 +96,6 @@ body::-webkit-scrollbar-track {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-
 }
 
 .profile-name {
@@ -119,7 +106,8 @@ body::-webkit-scrollbar-track {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -128,7 +116,6 @@ body::-webkit-scrollbar-track {
     margin: 0;
     margin-top: 10px;
     text-align: center;
-
 }
 
 .Bar ul {
@@ -140,11 +127,7 @@ body::-webkit-scrollbar-track {
     -ms-flex-direction: column;
     flex-direction: column;
     cursor: pointer;
-
-
 }
-
-
 
 hr {
     margin-left: 10px;
@@ -161,8 +144,6 @@ hr {
     padding-bottom: 40px;
     color: white;
     font-size: 1.3em;
-
-
 }
 
 a {
@@ -176,8 +157,15 @@ a {
     -ms-flex-align: center;
     align-items: center;
     gap: 10px;
-
     cursor: pointer;
+}
+
+.expland1 {
+    color: white;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .user {
@@ -190,23 +178,24 @@ a {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    z-index: 2;
+    margin-right: 25px;
 }
 
-.expland1 {
-    margin-left: 50px;
-
-}
 
 .user-name {
-
+    display: flex;
+    align-items: center;
     color: white;
+    margin-left: 10px;
+
 }
 
 .avatar-img {
-    margin-left: 30px;
-    width: 60px;
-    height: 60px;
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -222,50 +211,39 @@ a {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
 
 }
 
-.expland9 {
-    margin-left: 110px;
-}
-
-.expland8 {
-    margin-left: 128px;
-}
-
-.expland7 {
-    margin-left: 118px;
-}
-
-.expland5 {
-    margin-left: 137px;
+.expland {
+    margin-left: auto;
 }
 
 .menu-bar1 a {
     color: white;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    flex: 1;
 }
 
 .menu-bar a {
     color: white;
     text-decoration: none;
-}
-
-.expland2 {
-    margin-left: 130px;
-}
-
-.expland3 {
-    margin-left: 85px;
-}
-
-.expland4 {
-    margin-left: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+    flex: 1;
 }
 
 .menu-bar {
     margin-top: 10px;
     margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -278,7 +256,6 @@ a {
 }
 
 .menu-bar:hover {
-
     background-color: rgba(232, 226, 226, 0.3);
 
 }
@@ -289,8 +266,6 @@ a {
     margin-left: 5px;
 
 }
-
-
 
 header {
     margin-top: 15px;
@@ -399,11 +374,20 @@ header {
     margin: 0;
     border: none;
     margin-right: 5px;
-    padding: 5px;
-    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
     border-bottom: 2px solid var(--border-color);
 
 
+}
+
+.search-icon-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .search:hover {
@@ -450,19 +434,9 @@ header {
     transition-timing-function: 0.5s;
 }
 
-
-.notifications {
-    display: inline-block;
-    position: relative;
-
-
-}
-
 .notifications-bar {
     list-style: none;
     width: 250px;
-
-
 }
 
 .notifications::after {
@@ -577,7 +551,7 @@ header {
     border-radius: 5px;
 }
 
-.notifications:hover .notifications-bar {
+.notifications:focus .notifications-bar {
     display: block;
     cursor: pointer;
 }
@@ -622,9 +596,13 @@ header {
 
 .search-icon,
 .dashboard-icon {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
     padding: 7px;
-    width: 43px;
-    height: 43px;
+    width: 48px;
+    height: 48px;
+    color: gray;
     background-color: rgba(255, 255, 255, 0.572);
     border-radius: 50%;
     border: 1px solid var(--border-color);
@@ -661,7 +639,6 @@ header {
     border-radius: 5px;
     padding: 20px;
 
-
 }
 
 .global-sales-title {
@@ -673,21 +650,24 @@ header {
     -ms-flex-direction: row;
     flex-direction: row;
     gap: 20px;
-    font-size: 1.3em;
 
 }
 
 .title-glob {
-    margin-top: 15px;
+    font-size: 1.5em;
+    font-weight: 0;
+    margin-top: 20px;
+    margin-left: 15px;
 }
 
 .globicon {
     z-index: 1;
     position: relative;
-    top: -20px;
-    left: 10px;
+    top: -25px;
+    left: 15px;
+    box-shadow: var(--box-shadow-icon-color-hover);
     color: white;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid transparent;
     border-radius: 2px;
     background: -o-linear-gradient(bottom left, #70b18a, rgb(26, 150, 59));
@@ -710,7 +690,7 @@ header {
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 10px;
-    padding-top: 20px;
+    padding-top: 25px;
 }
 
 .map iframe {
@@ -728,13 +708,17 @@ header {
 .county-lists {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
 }
 
 table tr {
     border-bottom: 1px solid #c5c9c9;
 
+}
+
+.county-lists tr:last-child {
+    border: none;
 }
 
 td {
@@ -760,12 +744,9 @@ td {
 
 }
 
-
-
 .visits-icon {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -814,18 +795,19 @@ td {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 
 }
 
 .weekend-icon {
     z-index: 1;
     position: relative;
-    top: -10px;
-    left: 10px;
+    top: -15px;
+    left: 15px;
     color: white;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid transparent;
+    box-shadow: var(--box-shadow-icon-color-hover);
     border-radius: 2px;
     background: -o-linear-gradient(bottom left, #ff8c00, #ff0000);
     background: -webkit-gradient(linear, left bottom, right top, from(#ff8c00), to(#ff0000));
@@ -834,19 +816,15 @@ td {
 }
 
 .visits-under-title {
-
     margin-left: 15px;
     margin-bottom: 10px;
     color: var(--visit-undertitle-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
+    gap: 10px;
     justify-content: flex-start;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .info1 {
@@ -856,8 +834,6 @@ td {
 .infonumber {
     font-size: 1.5em;
 }
-
-
 
 .website-visits {
     background-color: white;
@@ -877,24 +853,24 @@ td {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .visits-icon1 {
     z-index: 1;
     position: relative;
-    top: -10px;
-    left: 10px;
+    top: -15px;
+    left: 15px;
     color: white;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid transparent;
     border-radius: 2px;
+    box-shadow: var(--box-shadow-icon-color-hover);
     background: rgb(148, 24, 96);
     background: -o-linear-gradient(bottom left, #ff0080, rgb(128, 0, 124));
     background: -webkit-gradient(linear, left bottom, right top, from(#ff0080), to(rgb(128, 0, 124)));
     background: linear-gradient(to top right, #ff0080, rgb(128, 0, 124));
 }
-
 
 .revenue {
 
@@ -915,17 +891,18 @@ td {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .storeicon {
     z-index: 1;
     position: relative;
-    top: -10px;
-    left: 10px;
+    top: -15px;
+    left: 15px;
     color: white;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid transparent;
+    box-shadow: var(--box-shadow-icon-color-hover);
     border-radius: 2px;
     background: rgb(24, 148, 86);
     background: -o-linear-gradient(bottom left, #84b699, rgb(19, 169, 59));
@@ -934,7 +911,6 @@ td {
 }
 
 .followers {
-
     background-color: white;
     border: 1px solid var(--border-color-grids);
     margin-top: 30px;
@@ -952,17 +928,18 @@ td {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .glob-2 {
     z-index: 1;
     position: relative;
-    top: -10px;
-    left: 10px;
+    top: -15px;
+    left: 15px;
     color: white;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid transparent;
+    box-shadow: var(--box-shadow-icon-color-hover);
     border-radius: 2px;
     background: -o-linear-gradient(bottom left, rgb(112, 163, 177), rgb(57, 155, 235));
     background: -webkit-gradient(linear, left bottom, right top, from(rgb(112, 163, 177)), to(rgb(57, 155, 235)));
@@ -983,9 +960,6 @@ td {
     margin-right: 20px;
 }
 
-
-
-
 .menage-list-title {
     padding-left: 25px;
     padding-bottom: 23px;
@@ -993,7 +967,6 @@ td {
     font-size: 2rem;
 
 }
-
 
 .hover-card {
     position: relative;
@@ -1012,18 +985,7 @@ td {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-
-    -webkit-transition: -webkit-transform 0.2s ease-in-out;
-
-    transition: -webkit-transform 0.2s ease-in-out;
-
-    -o-transition: transform 0.2s ease-in-out;
-
-    transition: transform 0.2s ease-in-out;
-
-    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
     top: -20px;
-
     display: block;
     z-index: -1;
     -webkit-transition: -webkit-transform 0.2 ease-in-out;
@@ -1034,7 +996,7 @@ td {
     -o-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    transition: transform 0.2 ease-in-out, -webkit-transform 0.2 ease-in-out;
+
 }
 
 .menage-photo {
@@ -1201,12 +1163,13 @@ td {
 
 .details-paragraph {
     color: var(--visit-undertitle-color);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-top: 30px;
 }
 
 .rome-price {
-    padding-top: 10px;
+    margin-bottom: 5px;
+    margin-top: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1436,6 +1399,14 @@ footer {
     display: inline-block;
 }
 
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .dashboard-mob {
     display: none;
 }
@@ -1490,19 +1461,20 @@ footer {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+        gap: 0;
     }
 
+    .county-lists tr td:not(:first-child) {
+        float: right;
+    }
 
-    .map iframe {
+.map iframe {
         display: block;
         width: 100%;
         aspect-ratio: 16 / 9;
         height: 300px;
 
     }
-
-
-
 
     .menage-content {
         margin-bottom: 20px;
@@ -1515,17 +1487,9 @@ footer {
         row-gap: 40px;
     }
 
-
-
-
-
-
     .menage-item {
-
         -ms-grid-column: 1;
-
         -ms-grid-column-span: 1;
-
         grid-column: 1 / 2;
         -ms-grid-row: 1;
         -ms-grid-row-span: 1;
@@ -1559,14 +1523,9 @@ footer {
         margin-top: 20px;
         padding-left: 10px;
     }
-
-    .country-name {
-        padding-right: 50px;
-    }
-
-
-
 }
+
+
 
 @media only screen and (max-width: 640px) {
 
@@ -1579,7 +1538,6 @@ footer {
     }
 
     .content {
-
         padding: 10px;
     }
 
@@ -1617,9 +1575,6 @@ footer {
         display: none;
     }
 
-
-
-
     .visits-item {
         display: -ms-grid;
         display: grid;
@@ -1629,10 +1584,6 @@ footer {
         grid-template-rows: repeat(4, auto);
         gap: 20px;
     }
-
-
-
-
 
     .bookings {
         -ms-grid-row: 1;
@@ -1675,6 +1626,11 @@ footer {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+        gap: 0;
+    }
+
+    .county-lists tr td:not(:first-child) {
+        float: none;
     }
 
     .menage-content {
@@ -1722,7 +1678,6 @@ footer {
 
     }
 
-
     .map iframe {
 
         display: block;
@@ -1737,12 +1692,6 @@ footer {
         margin-top: 20px;
         padding: 10px;
     }
-
-    .country-name {
-        padding-right: 50px;
-    }
-
-
 
     .menage-list-title {
         display: -webkit-box;
@@ -1766,6 +1715,7 @@ footer {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
+        flex-wrap: wrap;
         padding: 20px;
     }
 
