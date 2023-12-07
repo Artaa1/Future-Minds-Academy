@@ -1,23 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.progress-bar-container {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.indicator {
+    font-family: monospace, sans-serif;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.progress-bar-wrapper {
+    flex-grow: 1;
+    position: relative;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    background-color: green;
+    transition: height 0.3s ease-in-out;
+}
+
+.progress-bar.orange {
+    background-color: orange;
+}
+
+.progress-bar.yellow {
+    background-color: yellow;
+}
+
+.tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+.progress-bar:hover + .tooltip {
+    display: block;
+}
+</style>
+
 <body>
-   <script>
-    let a = 20;
-    let b = 30;
-    let c ;
-    a = b;
-    a = b;
-    b = c;
-    
+    <div class="progress-bar-container" id="progressBarContainer">
+        <span class="indicator">0%</span>
+        <div class="progress-bar-wrapper">
+            <div id="bar" class="progress-bar"></div>
+            <span class="indicator">100%</span>
+            <div class="tooltip" id="tooltip"></div>
+        </div>
+    </div>
 
+    <script>
+        let percentage = parseInt(prompt('What is the progress?'));
 
-    console.log(a);
-    console.log(b);
-       </script>
+        if (isNaN(percentage) || percentage < 0 || percentage > 100)
+            throw new Error('Write a valid percentage');
+
+        let color;
+        if (percentage <= 20)
+            color = 'darkred';
+        else if (percentage <= 50)
+            color = 'orange';
+        else if (percentage <= 80)
+            color = 'yellow';
+        else
+            color = 'green';
+
+        let progressBarContainer = document.getElementById('progressBarContainer');
+        let progressBar = document.getElementById('bar');
+        let tooltip = document.getElementById('tooltip');
+
+        tooltip.textContent = `${percentage}%`;
+        progressBar.className = 'progress-bar ' + color;
+        progressBar.style.height = `${percentage}%`;
+
+        // Add event listener for tooltip display on hover
+        progressBar.addEventListener('mouseover', () => {
+            tooltip.style.display = 'block';
+        });
+
+        progressBar.addEventListener('mouseout', () => {
+            tooltip.style.display = 'none';
+        });
+
+    </script>
 </body>
+
 </html>
