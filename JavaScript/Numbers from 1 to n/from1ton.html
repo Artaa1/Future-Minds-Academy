@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers from 1 to n</title>
+</head>
+
+<body>
+    <script>
+        let userNumber = parseInt(prompt('Write a positive integer from 1 to 100:'));
+
+        while (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
+            alert('Invalid input, please write a positive number from 1 to 100');
+            userNumber = parseInt(prompt('Write a positive integer from 1 to 100:'));
+        }
+
+        let counter = 1;
+        let spaceBetweenNumbers = "";
+
+        while (counter <= userNumber) {
+            spaceBetweenNumbers += counter;
+
+            if (counter < userNumber) {
+                spaceBetweenNumbers += ", ";
+            }
+
+            counter++;
+        }
+
+        console.log(spaceBetweenNumbers);
+
+    </script>
+</body>
+
+</html>

@@ -9,43 +9,32 @@
 
 <body>
     <script>
-        // let emri = prompt('Emri juaj?')
-        // console.log(emri);
-        // let mbiemri = prompt('Mbiemri juaj?')
-        // console.log(mbiemri);
-        // let numri = prompt('Numri i telefonit tuaj?')
-        // console.log(numri);
+        var sum = 0;
 
-        //string interpolation
+// Continue prompting the user until they enter 0
+while (true) {
+    // Prompt user for a number
+    var userInput = prompt("Enter a positive number (enter 0 to finish):");
 
-        //let emri = prompt('Emri');
-        //let mbiemri = prompt('Mbiemri');
-        //let kompania = prompt('Kompaia');
-        //let email = `Pershendetje ${emri} ${mbiemri} , urime per kompaninen ${kompania}`;
-        //console.log(email);
+    // Parse user input to a float
+    var number = parseFloat(userInput);
 
+    // Check if the input is a valid positive number
+    if (isNaN(number) || number < 0) {
+        alert("Invalid input. Please enter a positive number.");
+    } else {
+        // Add the number to the sum
+        sum += number;
 
-        //let linku = prompt('Ne cilen uebfaqe doni te shkoni');
-        //location.href = `https://${linku}.com`;
-
-        //let linku = prompt('Per cka deshironi te beni search');
-        //location.href = `https://google.com/search?q=${linku}`;
-
-        //let a = prompt('numri i pare');
-        //let b = prompt('numri i dyte');
-        //a = parseInt(a);
-       // b = parseInt(b);
-
-        //let shuma = a + b;
-        //console.log(`${a} + ${b} = ${shuma}`);
-
-        let password = prompt('Write the password to the website');
-        if(password == '12341234'){
-            console.log('Welcome');
+        // Check if the user wants to finish
+        if (number === 0) {
+            break; // Exit the loop if the user entered 0
         }
-        else{
-            console.log('password incorrect')
-        }
+    }
+}
+
+// Print the sum
+console.log("The sum of the entered numbers is: " + sum);
     </script>
 </body>
 

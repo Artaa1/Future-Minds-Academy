@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+</head>
+<body>
+    <script>
+        let userNumber = parseInt(prompt('Enter a number:'));
+
+       let startNumber = [1, 1];
+       
+       for (let i = 2; i < userNumber; i++) {
+        startNumber[i] = startNumber[i - 1] + startNumber[i - 2];
+
+       }
+       console.log(` ${startNumber} numbers from the Fibonacci Sequenc`);
+       for (let i = 0; i < userNumber; i++) {
+        console.log(startNumber[i]);
+       }
+    </script>
+</body>
+</html>
