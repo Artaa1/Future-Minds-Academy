@@ -20,8 +20,8 @@
 
         let timeString = '05:36 PM';
 
-        let [time, period] = timeString.split(' ');
-        let [hours, minutes] = time.split(':');
+        let hours = parseInt(timeString.substring(0,2));
+        let minutes
 
         console.log('Hours:', hours);
         console.log('Minutes:', minutes);
