@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <label id="label"></label><br>
+        <input id="fname" type="text" placeholder="">
+    </form>
+    <script>
+        let language = prompt('Cilen gjuhe e flisni?');
+        let name;
+        let label;
+        if (language == 'sq') {
+            name = 'Emri dhe Mbiemri';
+            lable = 'Filan Fisteku';
+        }
+        else if (language == 'en') {
+            name = 'Name and Surname'
+            label = 'John Doe';
+        }
+        else if (language == 'de') {
+            name = 'Vorname und Surname';
+            label = 'Max Musterman';
+        }
+        else {
+            throw new Error('Unsupported Language Code')
+        }
+
+        let labelElement = document.getElementById('label');
+labelElement.innerHTML = name;
+        let inputElement = document.getElementById('fname');
+        inputElement.placeholder = label;
+        
+       
+
+    </script>
+
+</body>
+
+</html>

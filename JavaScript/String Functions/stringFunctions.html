@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions</title>
+</head>
+<body>
+    <script>
+        let text = 'Hello, Dolly!';
+
+        text = text.toLocaleLowerCase();
+        console.log(text);
+
+       let myChart = text.charAt(0);
+        let myOtherChar = text.charAt(8);
+        console.log(text);
+
+        let myBool = text.startsWith('H');
+       let myOtherBool = text.endsWith('y');
+       console.log(text);
+
+       let text1 = `
+
+       Hello, Dolly!       `;
+       let trimmed = text1.trim();
+       console.log(trimmed);
+
+       let text2 = 'run,  ';
+
+       let repeatedText = text2.repeat(4);
+       console.log(repeatedText);
+
+       let text4 = 'Hello, Dolly!';
+       let length = text4.length
+       console.log(length);
+
+       let text5 = 'Hello, Dolly!';
+       console.log(text5.substring(0, 5));
+       console.log(text5.substring(7));
+       console.log(text5.substring(0, text.length - 1));
+
+
+    </script>
+</body>
+</html>

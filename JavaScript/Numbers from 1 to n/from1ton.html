@@ -20,15 +20,11 @@
         let spaceBetweenNumbers = "";
 
         while (counter <= userNumber) {
-            spaceBetweenNumbers += counter;
-
-            if (counter < userNumber) {
-                spaceBetweenNumbers += ", ";
-            }
+            spaceBetweenNumbers += spaceBetweenNumbers + counter + ', ';
 
             counter++;
         }
-
+        spaceBetweenNumbers += counter;
         console.log(spaceBetweenNumbers);
 
     </script>

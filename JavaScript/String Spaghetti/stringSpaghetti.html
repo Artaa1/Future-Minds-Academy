@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Spaghetti</title>
+</head>
+
+<body>
+    <script>
+
+        // Exampel 1:
+        let text = '     hello, dolly! ';
+        text = text.trim();
+        let firstWord = text.split(' ')[0];
+        let result = text.replace(firstWord.charAt(0), firstWord.charAt(0).toUpperCase());
+
+        console.log(result);
+
+        // Exampel 2:
+
+        let timeString = '05:36 PM';
+
+        let [time, period] = timeString.split(' ');
+        let [hours, minutes] = time.split(':');
+
+        console.log('Hours:', hours);
+        console.log('Minutes:', minutes);
+        console.log('Period:', period);
+
+        // Exampel 3:
+
+        let temperatureInTheCity = 'New York, 15°C'
+        let [city, temperaturePart] = temperatureInTheCity.split(',')
+
+        let temperature = parseInt(temperaturePart.trim());
+        console.log('City:', city.trim());
+        console.log('Temperature:', temperature);
+    
+
+
+    </script>>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Expressions</title>
+</head>
+
+<body>
+    <script>
+        // Exampel 1:
+        let printHelloWorld = function () {
+            for (let i = 0; i < 10; i++)
+                console.log('Hello World!');
+        }
+        printHelloWorld('Hello World')
+
+        // Exampel 2: 
+        //(In this example, the function is also called before its declaration, and in this case, it does not work.)
+
+        let stringParameter = (InputString) => {
+            console.log(InputString);
+        }
+
+        stringParameter('Hello');
+        // Exampel 3:
+
+        let greet = (name, surname) => `Welcome, ${name} ${surname}`;
+
+        let greetingMessage = greet('Arta', 'Shaqiri');
+        console.log(greetingMessage);
+
+        // Exampel 4:
+
+        let numberOfKilometers = (kilometers) => kilometers * 0.621371
+        const miles = numberOfKilometers(10);
+        console.log(`10 kilometers is approximately ${miles} miles`)
+
+        // Exampel 5:
+
+        let calculateCircleArea = (radius) => Math.PI * Math.pow(radius, 2);
+        const radius = 5;
+        const area = calculateCircleArea(5);
+        console.log(`The area of a circle with radius ${radius} is approximately ${area} square units`)
+
+        // Exampel 6:
+
+        let isWorkingCitizen = (age) => age >= 18 && age < 65;
+        const age = 25;
+        console.log(`Is the person a working citizen? ${isWorkingCitizen(age)}`)
+
+        // Exampel 7:
+        //(In this example, the function called before its declaration, and in this case, it does not work.)
+
+        console.log(`Is ${numberToCheck} an even number? ${isEven(numberToCheck)}`);
+
+        let isEven = function (number) {
+            return number % 2 == 0
+        }
+        const numberToCheck = 42;
+
+    </script>
+
+</body>
+
+</html>

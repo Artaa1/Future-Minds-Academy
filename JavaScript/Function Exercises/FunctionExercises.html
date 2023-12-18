@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Exercises</title>
+</head>
+
+<body>
+    <script>
+
+        //Exampel 1:
+
+        function printHelloWorld() {
+            for (let i = 0; i < 10; i++) {
+                console.log('Hello, World!');
+            }
+        }
+        printHelloWorld()
+
+        //Exampel 2:
+
+        function stringParameter(InputString) {
+            console.log(InputString);
+        }
+
+        stringParameter('Hello');
+
+        //Exampel 3:
+
+        function greet(name, surname) {
+
+            return `Welcome, ${name} ${surname}`;
+
+        }
+        let greetingMessage = greet('Arta, Shaqiri');
+        console.log(greetingMessage);
+
+        //Exampel 4:
+
+        function numberOfKilometers(kilometers) {
+            const miles = kilometers * 0.621371
+            return miles;
+        }
+
+        const miles = numberOfKilometers(10);
+        console.log(`10 kilometers is approximately ${miles} miles`);
+
+        //Exampel 5:
+
+        function calculateCircleArea(radius) {
+            const area = Math.PI * Math.pow(radius, 2);
+            return area;
+
+        }
+
+        const radius = 5;
+        const area = calculateCircleArea(radius);
+        console.log(`The area of a circle with radius ${radius} is approximately ${area} square units`);
+
+        // Exampel 6:
+
+        function isWorkingCitizen(age) {
+            return age >= 18 && age < 65
+        }
+
+        const age = 25;
+        console.log(`Is the person a working citizen? ${isWorkingCitizen(age)}`);
+
+        // Exampel 7:
+
+        function isEven(number) {
+            return number % 2 == 0;
+        }
+        const numberToCheck = 42;
+        console.log(`Is ${numberToCheck} an even number? ${isEven(numberToCheck)}`);
+
+    </script>
+</body>
+
+</html>
