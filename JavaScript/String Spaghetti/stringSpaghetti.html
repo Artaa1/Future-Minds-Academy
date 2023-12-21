@@ -12,7 +12,7 @@
 
         // Exampel 1:
         let text = '     hello, dolly! ';
-        text = text.trim().charAt(0).toLocaleLowerCase(;)
+        text = text.trim().charAt(0).toLocaleLowerCase();
 
         console.log(text);
 
@@ -20,22 +20,29 @@
 
         let timeString = '05:36 PM';
 
-        let hours = parseInt(timeString.substring(0,2));
-        let minutes = parseInt(timeString.substring(3,5));
-let period = parseInt(timeString.substring(6));
+        let hours = parseInt(timeString.substring(0, 2));
+        let minutes = parseInt(timeString.substring(3, 5));
+        let period = parseInt(timeString.substring(6));
         console.log('Hours:', hours);
         console.log('Minutes:', minutes);
         console.log('Period:', period);
 
         // Exampel 3:
 
-        let temperatureInTheCity = 'New York, 15°C'
-        let [city, temperaturePart] = temperatureInTheCity.split(',')
+        //let temperatureInTheCity = 'New York, 15°C'
+        //let [city, temperaturePart] = temperatureInTheCity.split(',')
 
-        let temperature = parseInt(temperaturePart.trim());
-        console.log('City:', city.trim());
-        console.log('Temperature:', temperature);
-    
+        //let temperature = parseInt(temperaturePart.trim());
+        //console.log('City:', city.trim());
+        //console.log('Temperature:', temperature);
+
+
+        let temperature = 'New York, 15°C';
+        let presja = temperature.indexOf(',');
+        let city = temperature.substring(0, presja);
+        let temp = parseInt(temperature.substring(presja + 2, temperature.length - 2));
+        console.log(`Qyteti${city} dhe temperatura: ${temp}`)
+
 
 
     </script>>
