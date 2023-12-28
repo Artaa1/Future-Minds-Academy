@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show a Notification Count in the Title Bar</title>
+</head>
+
+<body>
+    <script>
+
+        const notifications = ["New friend request", "Your order has been placed for $5.00"]
+        function addNotification(notifications) {
+            notifications.push(notifications);
+            showNotificationCount(notifications.length);
+        }
+
+        function removeRecentNotification() {
+            notifications.shift();
+            showNotificationCount(notifications.length);
+        }
+
+        function showNotificationCount(count) {
+            // Looks for:(n)
+            const pattern = /^\(\d+\)/;
+
+            if (count == 0 || pattern.test(document.title)) {
+                document.title = document.title.replace(pattern, count == 0 ? "" : "(" + count + ")")
+            } else {
+                document.title = "(" + count + ")" + document.title;
+            }
+
+        }
+
+        setTimeout(function (){
+            addNotification("Arta has subscribed to you?")
+        }, 5000);
+
+        showNotificationCount(notifications.length)
+    </script>
+</body>
+
+</html>
