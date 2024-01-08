@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's Tasks</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: rgb(70, 152, 204);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: monospace;
+
+    }
+
+    h1 {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+
+    }
+
+    .taskList {
+        list-style: none;
+        color: white;
+        font-size: 2rem;
+
+    }
+</style>
+
+<body>
+
+    <h1> Tasks for <span id="today"></span> </h1>
+    <ul id="taskList" class="taskList"></ul>
+
+
+    <script>
+        let todayElement = document.getElementById('today');
+        let today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+        todayElement.textContent = today;
+
+        function addTaskToList(task) {
+            let taskItem = document.createElement('li');
+            taskItem.textContent = task;
+            taskList.appendChild(taskItem);
+        }
+
+        let userInput;
+        do {
+            userInput = prompt('Write a task for the day (click enter to finish)')
+            if (userInput.trim() !== '') {
+                addTaskToList(userInput);
+            }
+        } while (userInput.trim() !== '');
+    </script>
+
+</body>
+
+</html>
