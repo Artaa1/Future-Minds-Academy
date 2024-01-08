@@ -59,12 +59,9 @@
         <div class="dimensions" id="dimensions"> </div>
     </div>
     <script>
-        let width = prompt("Enter thw width:");
-        let length = prompt("Enter the length:");
+        let width = parseFloat(prompt("Enter thw width:"));
+        let length = parseFloat(("Enter the length:"));
 
-
-        length = parseFloat(length);
-        width = parseFloat(width);
 
         if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
             alert("Invalid input. Please enter valid positive numbers.");
