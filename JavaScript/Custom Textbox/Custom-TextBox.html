@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Textbox</title>
+    <style>
+        *{
+            
+            box-sizing: border-box;
+            
+        }
+       body {
+        margin: 0;
+        font-family: monospace, sans-serif;
+        height: 100vh;
+        display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+       }
+        #textBox{
+            
+            background: black;
+            padding: 15px;
+            color: whitesmoke;
+            border: 1px solid whitesmoke;
+            background: black;
+           width: 40rem;
+            color: aliceblue;
+            outline: none;
+            box-shadow: 10px 10px 10px rgba(80, 118, 125, 0.941);
+        }
+        #placeholderText {
+            position: relative;
+            top: 0;
+            left: 0;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div id="textBox" contenteditable="true">
+        <span id="placeholderText">Start typing</span>
+    </div>
+
+    <script>
+        let textBox = document.getElementById('textBox');
+        let placeholderText = document.getElementById('placeholderText');
+       
+        textBox.addEventListener('input', function() {
+            if (textBox.textContent.trim() == '') {
+                placeholderText.style.display = 'block';
+            } else {
+                placeholderText.style.display = 'none';
+            }
+        });
+
+        textBox.addEventListener('keydown', function(event) {
+            if (event.key == 'Backspace' && textBox.textContent.trim() == '') {
+                placeholderText.style.display = 'block';
+            }
+        });
+    </script>
+</html>

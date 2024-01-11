@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online and Offline</title>
+</head>
+<style>
+    *{
+        margin-top: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: monospace, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #8dced9;
+        overflow-y: hidden;
+    }
+    #offlinePopup {
+        display: none;
+        width: 400px;
+            background: #5192e2;
+            border-radius: 6px;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 10px;
+            color: white;
+           transition: transform 0.4s, top 0.4s;
+
+    }
+
+    #offlinePopup.show{
+            display: block;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+
+    img{
+            width: 50px;
+            margin-top: -50px;
+            margin-left: 25px;
+            border-radius: 50%;
+            box-shadow: 0 8px 10px #5192e2;
+    }
+</style>
+<body>
+    <div id="offlinePopup">
+        <img src="offline-icon.jpg" alt="offline-icon">
+        <p>You are offline, please wait until you are reconnected</p>
+    </div>
+
+<script>
+
+   let offlinePopup = document.getElementById('offlinePopup');
+
+    function showOfflinePopup(){
+        offlinePopup.classList.add('show');
+   }
+function removeOfflinePopup() {
+       offlinePopup.classList.add('show');
+    }
+    window.addEventListener('online', removeOfflinePopup);
+    window.addEventListener('offline', showOfflinePopup);
+</script>
+
+</body>
+</html>
