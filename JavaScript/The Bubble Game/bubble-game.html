@@ -16,7 +16,7 @@
             opacity: 0.7;
             position: fixed;
             animation: moveUpDown 5s infinite alternate;
-             transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
 
         @keyframes moveUpDown {
@@ -43,7 +43,7 @@
             let randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
             return randomColor;
         }
-        
+
         function popBubble(event) {
             if (event.target.classList.contains('bubble')) {
                 event.target.remove();

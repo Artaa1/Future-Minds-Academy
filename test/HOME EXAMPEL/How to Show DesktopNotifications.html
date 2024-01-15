@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function showNotification() {
+            const notifications = new Notification("New message from Arta!", {
+                body: "Hey Arta, how are you?"
+            });
+        }
+        console.log(Notification.permission);
+
+        if(Notification.permission == "granted"){
+            showNotification();
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission(). then(permission => {
+                if (permission == "granted"){
+                    showNotification();
+                }
+                
+            }) 
+        }
+    </script>
+</body>
+</html>

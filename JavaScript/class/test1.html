@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #points {
+        position: fixed;
+        top: 50%;
+        right: 0;
+
+    }
+
+    input[type=range][orient=vertical] {
+        appearance: slider-vertical;
+        width: 8px;
+        height: 175px;
+        padding: 0 5px;
+    }
+</style>
+
+<body>
+
+    <div class="content">
+        <p id="textBox">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit architecto reiciendis, veniam
+            totam doloribus vitae modi deleniti perspiciatis, deserunt repellendus nisi quis minima nesciunt, molestias
+            quod. Consequuntur nihil praesentium ullam temporibus earum debitis iste ab ipsum repellat adipisci
+            doloremque beatae, neque, error, natus dolorum et enim consequatur aperiam dolorem a voluptatum totam fugit
+            soluta vitae? Aperiam ut porro dolore eum ducimus quia corrupti ea repellendus est deleniti iusto odit fuga,
+            reiciendis molestiae consequatur optio perferendis sint cumque, aut, minima quaerat ab. Vitae, provident
+            laborum? Aliquam delectus obcaecati, commodi aperiam suscipit autem dignissimos illo qui molestiae minus id
+            consequatur similique quasi iure atque esse eos dolorum necessitatibus quidem perspiciatis quos eius eaque
+            ut.</p>
+        <input type="range" orient="vertical" id="points" name="points" min="20" max="30">
+    </div>
+    <script>
+        let range = document.getElementById('points');
+        let text = document.getElementById('textBox');
+
+        function update() {
+            let fontSize = range.value;
+            text.style.fontSize = fontSize + 'px';
+
+        }
+
+        range.addEventListener('input', update);
+
+
+    </script>
+</body>
+
+</html>

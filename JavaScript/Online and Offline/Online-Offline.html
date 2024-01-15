@@ -66,7 +66,7 @@
         offlinePopup.classList.add('show');
    }
 function removeOfflinePopup() {
-       offlinePopup.classList.add('show');
+       offlinePopup.classList.remove('show');
     }
     window.addEventListener('online', removeOfflinePopup);
     window.addEventListener('offline', showOfflinePopup);
