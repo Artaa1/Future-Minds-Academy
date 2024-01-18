@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: monospace, sans-serif;
+    }
+
+    h3 {
+        padding: 20px;
+        color: rgb(52, 41, 202);
+        font-size: 1.3rem;
+    }
+
+    h4 {
+        margin-top: 10px;
+        padding: 20px;
+        color: rgb(52, 41, 202);
+        font-size: 1.1rem;
+    }
+
+    table,
+    td,
+    th {
+        width: 60%;
+        border: 1px solid grey;
+        margin-top: 20px;
+        padding: 5px;
+        border-collapse: collapse;
+        box-shadow: 2px 2px 5px rgb(155, 148, 148);
+
+    }
+
+    .table th {
+        text-align: left;
+    }
+
+    .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .cart-table th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <h3>
+        Explanation: The prices of the items have been increased by x3, while the initial prices were as follows...</h3>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Milk</td>
+            <td>1.65</td>
+        </tr>
+        <tr>
+            <td>Bread</td>
+            <td>2.25</td>
+        </tr>
+        <tr>
+            <td>Smartphone</td>
+            <td>699.99</td>
+        </tr>
+        <tr>
+            <td>Running Shoes</td>
+            <td>49.99</td>
+        </tr>
+        <tr>
+            <td>Book: The Hitchhiker's Guide to the Galaxy</td>
+            <td>12.99</td>
+        </tr>
+        <tr>
+            <td>Coffee Maker</td>
+            <td>34.99</td>
+        </tr>
+        <tr>
+            <td>Gaming Laptop</td>
+            <td>1299.99</td>
+        </tr>
+        <tr>
+            <td>Sunglasses</td>
+            <td>19.99</td>
+        </tr>
+    </table>
+    <h4>In the table below are the items with prices increased by x3</h4>
+
+    <script>
+        let cart = [
+            {
+                title: 'Milk',
+                category: 'Food',
+                quantity: 3,
+                price: 1.65
+            },
+            {
+                title: 'Bread',
+                category: 'Food',
+                quantity: 2,
+                price: 2.25
+            },
+            {
+                title: 'Smartphone',
+                category: 'Electronics',
+                quantity: 1,
+                price: 699.99
+            },
+            {
+                title: 'Running Shoes',
+                category: 'Fashion',
+                quantity: 1,
+                price: 49.99
+            },
+            {
+                title: 'Book: The Hitchhiker\'s Guide to the Galaxy',
+                category: 'Books',
+                quantity: 1,
+                price: 12.99
+            },
+            {
+                title: 'Coffee Maker',
+                category: 'Appliances',
+                quantity: 1,
+                price: 34.99
+            },
+            {
+                title: 'Gaming Laptop',
+                category: 'Electronics',
+                quantity: 1,
+                price: 1299.99
+            },
+            {
+                title: 'Sunglasses',
+                category: 'Fashion',
+                quantity: 2,
+                price: 19.99
+            }
+        ];
+
+        let updateCart = cart.map((item) => {
+            item.price *= 3;
+            return item;
+        })
+
+        let shoppingCart = document.createElement('table');
+shoppingCart.classList.add('cart-table');
+
+updateCart.forEach((cartItem, index) => {
+    let row = shoppingCart.insertRow(index);
+
+    let titleCell = row.insertCell(0);
+    titleCell.textContent = cartItem.title;
+
+    let categoryCell = row.insertCell(1);
+    categoryCell.textContent = cartItem.category;
+
+    let quantityCell = row.insertCell(2);
+    quantityCell.textContent = cartItem.quantity;
+
+    let priceCell = row.insertCell(3);
+    priceCell.textContent = cartItem.price.toFixed(2);
+});
+
+
+let total = updateCart.reduce((acc, item) => acc + item.price, 0);
+let totalRow = shoppingCart.insertRow(updateCart.length);
+
+let totalTitleCell = totalRow.insertCell(0);
+totalTitleCell.textContent = 'Total Price';
+totalTitleCell.style.backgroundColor = 'blue';
+totalTitleCell.style.fontSize = '1.5rem';
+totalTitleCell.style.color = 'white';
+totalTitleCell.colSpan = 3;
+
+let totalPriceCell = totalRow.insertCell(1);
+totalPriceCell.style.backgroundColor = 'blue';
+totalPriceCell.style.fontSize = '1.5rem';
+totalPriceCell.style.color = 'white';
+totalPriceCell.textContent = total.toFixed(2);
+
+let headerRow = shoppingCart.createTHead().insertRow(0);
+let headers = ['Title', 'Category', 'Quantity', 'Price'];
+
+headers.forEach((headerText, index) => {
+    let th = document.createElement('th');
+    th.textContent = headerText;
+    headerRow.appendChild(th);
+});
+
+
+        document.body.appendChild(shoppingCart);
+
+    </script>
+</body>
+
+</html>

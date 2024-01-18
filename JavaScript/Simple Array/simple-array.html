@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: monospace, sans-serif;
+
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(45deg, #154b31, #4f7a29);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+    }
+    .task-container {
+            border: 2px solid rgb(5, 138, 5);
+            box-shadow: 4px 4px 4px yellowgreen;
+            padding: 10px;
+            margin: 10px;
+            max-width: 300px;
+            width: 100%; 
+            text-align: center; 
+        }
+
+
+    .task {
+        background-color: rgb(71, 152, 71);
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            color: whitesmoke;
+    }
+</style>
+
+<body>
+
+    <script>
+        let taskList = [];
+
+        for (let i = 0; i < 5; i++) {
+            let task = prompt('Write a task for today');
+            taskList.push(task);
+        }
+
+        let taskContainer = document.createElement('ol');
+        taskList.forEach((task, index) => {
+            let listItem = document.createElement('li');
+            listItem.classList.add('task');
+            listItem.textContent = task;
+            taskContainer.appendChild(listItem);
+        })
+        document.body.appendChild(taskContainer);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .body {
+        height: 100vh;
+        font-family: monospace, sans-serif;
+        overflow: hidden;
+
+
+    }
+
+    .content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: linear-gradient(90deg, #214259, #4788ae);
+
+
+
+    }
+
+    .title {
+        margin: 0;
+        background: linear-gradient(90deg, #214259, #4788ae);
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        color: whitesmoke;
+    }
+
+    .movie {
+
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 45px;
+        background-color: #5f6565;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 4px 4px 8px rgba(182, 181, 181, 0.6);
+        text-align: center;
+        max-width: 200px;
+        height: max-content;
+        padding: 10px;
+        color: white;
+        list-style: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s, transform 0.5s;
+
+    }
+
+    .movie img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .movie-info {
+        padding: 10px;
+    }
+
+    .highest-rated {
+        border: 2px solid gold;
+        max-width: 250px;
+        box-shadow: 6px 6px 10px rgb(38, 35, 35);
+    }
+</style>
+
+<body>
+    <h1 class="title">The sorting of movies by rating</h1>
+    <script>
+
+        let movies = [
+            {
+                name: 'The Godfather',
+                releaseYear: 1972,
+                rating: 9.2,
+                mainActors: ['Marlon Brando', 'Al Pacino', 'James Caan'],
+                imageUrl: 'images/the-god-father.jpg'
+
+            },
+            {
+                name: 'The Shawshank Redemption',
+                releaseYear: 1994,
+                rating: 9.3,
+                mainActors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton'],
+                imageUrl: 'images/the-shawshank-redemption.jpg'
+            },
+            {
+                name: 'Pulp Fiction',
+                releaseYear: 1994,
+                rating: 8.9,
+                mainActors: ['John Travolta', 'Uma Thurman', 'Samuel L. Jackson'],
+                imageUrl: 'images/pulp-fiction.jpg'
+            },
+            {
+                name: 'The Dark Knight',
+                releaseYear: 2008,
+                rating: 9.0,
+                mainActors: ['Christian Bale', 'Heath Ledger', 'Aaron Eckhart'],
+                imageUrl: 'images/the-dark-Knigh.jpg'
+            },
+            {
+                name: 'Forrest Gump',
+                releaseYear: 1994,
+                rating: 8.8,
+                mainActors: ['Tom Hanks', 'Robin Wright', 'Gary Sinise'],
+                imageUrl: 'images/forrest-gump.jpg'
+            }
+        ];
+
+        let highRatedMovies = movies.filter((item) => {
+            return item.rating >= 8.5;
+        })
+
+        highRatedMovies.sort((a, b) => b.rating - a.rating);
+
+        let content = document.createElement('div');
+        content.classList.add('content');
+        document.body.appendChild(content)
+
+
+        highRatedMovies.forEach((movie, index) => {
+            let listItem = document.createElement('li');
+            listItem.classList.add('movie');
+
+            if (index == 0) {
+                listItem.classList.add('highest-rated')
+            }
+
+            let image = document.createElement('img');
+            image.src = movie.imageUrl;
+            listItem.appendChild(image);
+
+            let movieInfo = document.createElement('div');
+            movieInfo.classList.add('movie-info');
+            movieInfo.innerHTML = `<h3>${movie.name}</h3>
+            <p>Release Year: ${movie.releaseYear}</p>
+                <p>Main Actors: ${movie.mainActors.join(', ')}</p>
+                <p>Rating: ${movie.rating}`;
+
+            listItem.appendChild(movieInfo);
+            content.appendChild(listItem);
+
+            setInterval(() => {
+                listItem.style.opacity = '1';
+                listItem.style.transform = 'translateY(0)';
+            }, 1000 * index)
+        })
+        document.body.appendChild(content);
+
+
+    </script>
+</body>
+
+</html>
