@@ -162,49 +162,49 @@
         })
 
         let shoppingCart = document.createElement('table');
-shoppingCart.classList.add('cart-table');
+        shoppingCart.classList.add('cart-table');
 
-updateCart.forEach((cartItem, index) => {
-    let row = shoppingCart.insertRow(index);
+        updateCart.forEach((cartItem, index) => {
+            let row = shoppingCart.insertRow(index);
 
-    let titleCell = row.insertCell(0);
-    titleCell.textContent = cartItem.title;
+            let titleCell = row.insertCell(0);
+            titleCell.textContent = cartItem.title;
 
-    let categoryCell = row.insertCell(1);
-    categoryCell.textContent = cartItem.category;
+            let categoryCell = row.insertCell(1);
+            categoryCell.textContent = cartItem.category;
 
-    let quantityCell = row.insertCell(2);
-    quantityCell.textContent = cartItem.quantity;
+            let quantityCell = row.insertCell(2);
+            quantityCell.textContent = cartItem.quantity;
 
-    let priceCell = row.insertCell(3);
-    priceCell.textContent = cartItem.price.toFixed(2);
-});
+            let priceCell = row.insertCell(3);
+            priceCell.textContent = cartItem.price.toFixed(2);
+        });
 
 
-let total = updateCart.reduce((acc, item) => acc + item.price, 0);
-let totalRow = shoppingCart.insertRow(updateCart.length);
+        let total = updateCart.reduce((acc, item) => acc + item.price, 0);
+        let totalRow = shoppingCart.insertRow(updateCart.length);
 
-let totalTitleCell = totalRow.insertCell(0);
-totalTitleCell.textContent = 'Total Price';
-totalTitleCell.style.backgroundColor = 'blue';
-totalTitleCell.style.fontSize = '1.5rem';
-totalTitleCell.style.color = 'white';
-totalTitleCell.colSpan = 3;
+        let totalTitleCell = totalRow.insertCell(0);
+        totalTitleCell.textContent = 'Total Price';
+        totalTitleCell.style.backgroundColor = 'blue';
+        totalTitleCell.style.fontSize = '1.5rem';
+        totalTitleCell.style.color = 'white';
+        totalTitleCell.colSpan = 3;
 
-let totalPriceCell = totalRow.insertCell(1);
-totalPriceCell.style.backgroundColor = 'blue';
-totalPriceCell.style.fontSize = '1.5rem';
-totalPriceCell.style.color = 'white';
-totalPriceCell.textContent = total.toFixed(2);
+        let totalPriceCell = totalRow.insertCell(1);
+        totalPriceCell.style.backgroundColor = 'blue';
+        totalPriceCell.style.fontSize = '1.5rem';
+        totalPriceCell.style.color = 'white';
+        totalPriceCell.textContent = total.toFixed(2);
 
-let headerRow = shoppingCart.createTHead().insertRow(0);
-let headers = ['Title', 'Category', 'Quantity', 'Price'];
+        let headerRow = shoppingCart.createTHead().insertRow(0);
+        let headers = ['Title', 'Category', 'Quantity', 'Price'];
 
-headers.forEach((headerText, index) => {
-    let th = document.createElement('th');
-    th.textContent = headerText;
-    headerRow.appendChild(th);
-});
+        headers.forEach((headerText, index) => {
+            let th = document.createElement('th');
+            th.textContent = headerText;
+            headerRow.appendChild(th);
+        });
 
 
         document.body.appendChild(shoppingCart);

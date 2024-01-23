@@ -4,42 +4,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+
+        }
+
+        .container {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+
+
+        }
+
+        #time {
+            font-size: 3em;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        #lapList {
+            list-style: none;
+            padding: 0;
+        }
+
+        button {
+cursor: pointer;
+            margin: 5px;
+            padding: 15px;
+            font-size: 1em;
+            background-color: #444;
+            color: whitesmoke;
+            border-radius: 15px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <div id="time">00:00:00</div>
+        <button id="start" onclick="start()">Start</button>
+        <button id="lap" onclick="lap()" disabled>Lap</button>
+        <button id="stop" onclick="stop()" disabled>Stop</button>
+        <button id="reset" onclick="reset()" disabled>Reset</button>
+    </div>
+    <ul id="lapList"></ul>
 
-    <form>
-        <label id="label"></label><br>
-        <input id="fname" type="text" placeholder="">
-    </form>
     <script>
-        let language = prompt('Cilen gjuhe e flisni?');
-        let name;
-        let label;
-        if (language == 'sq') {
-            name = 'Emri dhe Mbiemri';
-            lable = 'Filan Fisteku';
-        }
-        else if (language == 'en') {
-            name = 'Name and Surname'
-            label = 'John Doe';
-        }
-        else if (language == 'de') {
-            name = 'Vorname und Surname';
-            label = 'Max Musterman';
-        }
-        else {
-            throw new Error('Unsupported Language Code')
+        let startTime;
+        let elapsedTime = 0;
+        let laps = [];
+        let isRunning = false;
+
+        function start() {
+            startTime = isRunning ? startTime : new Date().getTime() - elapsedTime;
+            isRunning = true;
+            updateButtons(false, true, true, false);
+            updateDisplay();
+            updateClock();
         }
 
-        let labelElement = document.getElementById('label');
-labelElement.innerHTML = name;
-        let inputElement = document.getElementById('fname');
-        inputElement.placeholder = label;
-        
-       
+        function lap() {
+            const lapTime = new Date().getTime() - startTime;
+            laps.push(lapTime);
+            updateDisplay();
+            updateLapList();
+        }
 
+        function stop() {
+            isRunning = false;
+            elapsedTime = new Date().getTime() - startTime;
+            updateButtons(true, false, false, true);
+            clearInterval(updateInterval);
+        }
+
+        function reset() {
+            isRunning = false;
+            startTime = 0;
+            elapsedTime = 0;
+            laps = [];
+            updateDisplay();
+            updateButtons(true, false, false, false);
+            updateLapList();
+        }
+
+        function updateDisplay() {
+            const formattedTime = formatTime(elapsedTime);
+            document.getElementById('time').innerText = formattedTime;
+        }
+
+        function updateLapList() {
+            const lapList = document.getElementById('lapList');
+            lapList.innerHTML = '';
+
+            laps.forEach((lap, index) => {
+                const lapItem = document.createElement('li');
+                lapItem.innerText = `Lap ${index + 1}: ${formatTime(lap)}`;
+                lapList.appendChild(lapItem);
+            });
+        }
+
+        function updateButtons(start, lap, stop, reset) {
+            document.getElementById('start').disabled = !start;
+            document.getElementById('lap').disabled = !lap || !isRunning;
+            document.getElementById('stop').disabled = !stop;
+            document.getElementById('reset').disabled = !reset;
+        }
+
+        function updateClock() {
+            updateInterval = setInterval(() => {
+                elapsedTime = new Date().getTime() - startTime;
+                updateDisplay();
+            }, 10);
+        }
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60000);
+            const seconds = Math.floor((time % 60000) / 1000);
+            const milliseconds = Math.floor((time % 1000) / 10);
+
+            return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')},${String(milliseconds).padStart(2, '0')}`;
+        }
     </script>
 
 </body>

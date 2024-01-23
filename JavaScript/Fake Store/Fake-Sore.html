@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: monospace, sans-serif;
+    }
+
+    body {
+        background-color: rgb(255, 255, 255);
+        overflow-y: scroll;
+    }
+
+  
+    .products-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 5px;
+        box-sizing: border-box;
+        margin: 20px;
+    }
+
+    .product {
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 10px;
+        border: 1px solid rgb(131, 131, 133);
+        border-radius: 10px;
+        width: 200px;
+        background-color: rgb(211, 221, 237);
+        box-shadow: 2px 2px 2px steelblue;
+        font-size: 0.6em;
+        display: grid;  
+        place-items: center;
+        cursor: pointer;
+    }
+
+    .product img {
+        width: 140px;
+        height: 140px;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+    #popup{
+        display: none;
+        text-align: center;
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: whitesmoke;
+        padding: 20px;
+        border: 1px solid black;
+        z-index: 1000;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+   
+    #popup-price{
+        color: blueviolet;
+    }
+    #popup img {
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+    }
+    #description{
+        font-size: 0.8em;
+    }
+    .close-button {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    body.popup-open {
+            overflow-y: hidden; 
+        }
+  
+</style>
+
+<body>
+    <div id="products-container" class="products-list"></div>
+    <div id="popup" onclick="closePopup()">
+        <span id="popup-price"></span>
+        <span id="description"></span>
+    </div>
+    <script>
+
+        const numberOfProducts = 14;
+
+        fetch(`https://fakestoreapi.com/products?limit=${numberOfProducts}`)
+            .then(response => response.json())
+            .then((json) => {
+                if (json && Array.isArray(json)) {
+                    processData(json);
+                } else {
+                    console.error('Invalid or missing data in the API response.');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
+        function processData(data) {
+            let productsContainer = document.getElementById('products-container');
+
+            data.forEach(product => {
+                let productElement = document.createElement('div');
+                productElement.classList.add('product');
+                productElement.innerHTML = `<img src="${product.image}" alt="${product.title}"><br>
+                 <h3>${product.title}</h3><br>
+            <p>Price: ${product.price}$</p><br>`;
+                productElement.addEventListener('click', () => togglePopup(product));
+                productsContainer.appendChild(productElement);
+            });
+
+            document.body.appendChild(productsContainer);
+        }
+
+        function togglePopup(product) {
+            let popupDiv = document.getElementById('popup');
+            let body = document.body;
+           
+            if (popupDiv.style.display == 'block') {
+                popupDiv.style.display = 'none';
+                popupDiv.innerHTML = '';
+                productsContainer.classList.remove('popup-open');
+               
+            } else {
+                popupDiv.innerHTML = `<img src='${product.image}'alt="${product.title}"><br>
+                 <h3>${product.title}</h3><br>
+                 <p id="description"> ${product.description}</p><br>
+            <p id="popup-price"> ${product.price}$</p><br>`;
+                popupDiv.style.display = 'block';
+                body.classList.add('popup-open');
+                
+                
+            }
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.body.classList.remove('popup-open');
+        }
+    </script>
+</body>
+
+</html>
