@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Facts</title>
+    <style>
+        body {
+            font-family: monospace, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #factContainer {
+            text-align: center;
+            padding: 20px;
+            background-color: #c2e1f1;
+            box-shadow: 2px 2px 10px rgb(38, 32, 32);
+            border-radius: 8px;
+        }
+
+        #factList {
+            text-align: start;
+            padding: 0;
+            color: rgb(0, 0, 205);
+        }
+
+        .submit {
+            padding: 2px 4px 2px 4px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: rgb(57, 57, 149);
+            font-weight: bolder;
+
+        }
+        .submit:hover {
+            background-color: #aeb1ba;
+        }
+
+        #birthdate {
+            padding: 2px;
+            border-radius: 5px;
+        }
+
+        .factItem {
+            margin: 10px;
+        }
+
+        #errorMessage {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="factContainer">
+        <h1>Birthday Facts</h1>
+        <form id="birthdayForm">
+            <label for="birthdate">Enter your birthdate:</label>
+            <input type="date" id="birthdate" required>
+            <button type="submit" class="submit">Get Facts</button>
+        </form>
+        <ol id="factList"></ol>
+        <p id="errorMessage"></p>
+    </div>
+
+    <script>
+        const apiUrl = 'https://numbersapi.p.rapidapi.com/6/21/date?fragment=true&json=true';
+
+        const getBirthdayFacts = async (date) => {
+            try {
+                const promises = Array.from({ length: 3 }, (_, index) =>
+                    fetch(`${apiUrl}/${date}/${index + 1}/date?json=true`, {
+                        method: 'GET',
+                        headers: {
+                            'X-RapidAPI-Key': 'f115c1956fmsh7fa9ce0bb192a53p1d3389jsn4a93af69dfaa',
+                            'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
+                        }
+                    }).then(response => response.json())
+                        .then(data => {
+                            return data;
+                        })
+                );
+
+                const results = await Promise.all(promises);
+
+                const factListElement = document.getElementById('factList');
+                factListElement.innerHTML = '';
+
+                results.forEach((result, index) => {
+                    const factItemElement = document.createElement('li');
+                    factItemElement.classList.add('factItem');
+                    factItemElement.textContent = result.text;
+                    factListElement.appendChild(factItemElement);
+                });
+
+                document.getElementById('errorMessage').textContent = '';
+            } catch (error) {
+                console.error(error);
+                document.getElementById('errorMessage').textContent = 'Error: Unable to fetch facts at the moment.';
+            }
+        };
+
+        document.getElementById('birthdayForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            getBirthdayFacts(document.getElementById('birthdate').value);
+        });
+
+
+    </script>
+</body>
+
+</html>
