@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Local Storage</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    header {
+        background-color: #5898b6;
+        color: white;
+        text-align: center;
+        padding: 1em;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        color: #333; 
+    }
+
+    footer {
+        background-color: #5898b6;
+        color: white;
+        text-align: center;
+        padding: 1em;
+
+    }
+
+    #mode {
+        display: flex;
+        justify-content: end;
+        margin-right: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        gap: 5px;
+    }
+
+    button {
+        padding: 5px;
+        border: 2px solid rgb(67, 67, 67);
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    }
+    #dark-mode{
+        background-color: #040404;
+        color: whitesmoke;
+
+    }
+    #light-mode{
+        background-color: whitesmoke;
+        color: black;
+    }
+
+    .dark-mode {
+        background-color: #040404;
+        
+    }
+
+    .light-mode {
+        background-color: #fff;
+      
+    }
+</style>
+
+<body>
+    <div id="mode">
+        <button id="dark-mode" onclick="darkMode()">Dark Mode</button>
+        <button id="light-mode" onclick="lightMode()">Light Mode</button>
+    </div>
+    <header>
+        <h1>My Page</h1>
+    </header>
+
+    <main>
+        <h2>Welcome to my simple page</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum velit atque nobis suscipit expedita officiis
+            amet voluptatibus nam quia qui voluptate accusamus temporibus in porro vitae culpa, adipisci repellendus
+            tenetur dolores dolorum fuga commodi? Quisquam consequatur expedita facilis quod et cum, iure, a modi
+            laborum deserunt animi dolorum deleniti nesciunt impedit eum quis officia quidem esse recusandae nulla
+            ratione! Sapiente illo debitis eveniet dicta fuga porro reiciendis omnis consequuntur ex, fugiat placeat.
+            Molestias molestiae eius delectus provident ipsum ex voluptatibus, dolorum nobis nam corporis vel? Adipisci
+            animi debitis, iusto accusantium quibusdam officiis delectus sapiente cum ea deleniti corporis, neque
+            tempore aliquam ducimus vitae consectetur quod molestias quaerat? Iste rerum expedita quo, fugiat laboriosam
+            illo enim unde labore voluptate impedit doloremque velit saepe praesentium quidem neque eligendi deserunt
+            autem quia quam nostrum mollitia ullam totam corporis molestias. Omnis necessitatibus dolorum quasi
+            assumenda cupiditate facere minima iusto! Assumenda optio in repellat, accusamus dolorum sapiente explicabo
+            maiores esse, et perspiciatis dicta sed amet? Velit sapiente natus consequatur soluta pariatur consectetur
+            nihil, unde similique sed, quas iusto repellat explicabo fugiat? Totam distinctio, recusandae tempore quae
+            cupiditate officia cum veritatis, porro delectus nesciunt ipsa laborum tenetur provident a necessitatibus
+            sequi similique! Molestias exercitationem aliquid necessitatibus sequi alias, fuga, nam quidem sint minima
+            modi quis dolore! Deleniti laboriosam mollitia natus cum fugit, incidunt itaque eius obcaecati beatae
+            placeat porro illo alias. Et, nostrum rerum! Iusto animi soluta vero perferendis debitis ullam dolorem eius
+            accusamus qui possimus eveniet porro sint dolor inventore, tempore sit voluptates deleniti quae
+            reprehenderit corporis hic doloribus nostrum illum explicabo. Officiis earum quia aperiam neque, odit rem
+            maiores quaerat sit, vitae iusto quisquam sint culpa laudantium incidunt, exercitationem voluptas nihil ut
+            dolorum consequuntur et aliquid est minima! Consectetur asperiores maiores itaque, voluptatibus dolorem
+            ducimus necessitatibus dicta dolores exercitationem autem impedit. Quibusdam, modi sit qui corporis ea ipsam
+            officiis maxime veritatis? Voluptatibus doloribus fuga sit expedita veniam ipsa obcaecati at, nostrum cumque
+            nemo. Aliquid ad amet optio laudantium dolores, dicta, quod in enim, sapiente veniam ratione ipsum incidunt
+            aperiam a ipsam non. Qui molestiae eligendi, assumenda explicabo sapiente dicta voluptate recusandae
+            corporis, et quis exercitationem autem error nulla ipsam ipsum modi adipisci natus atque vel? Quo, sequi
+            animi ex qui nostrum pariatur consectetur facilis itaque quibusdam voluptatem libero natus quidem in harum
+            laborum exercitationem quos ipsum vel? Nostrum veniam necessitatibus ipsa? Consequuntur odit, laudantium qui
+            eum labore vitae ratione quaerat. Eos, tempora enim. Aut autem sed cum minus quia perferendis alias dolores
+            officia sunt voluptates dolorum atque iste nesciunt sint, excepturi rerum doloribus est quos, perspiciatis
+            placeat assumenda quas provident sequi. Exercitationem voluptatibus consequuntur, sit maxime officiis sequi.
+            Corrupti, pariatur eius. Repellendus, repudiandae dignissimos quidem deserunt, eum perspiciatis eaque error
+            eius amet sint asperiores. Porro eius iste eos deserunt illo, voluptatum sequi ab incidunt! Voluptate
+            necessitatibus harum fugit dolorem similique ducimus eum et qui, quidem, consequatur labore, rem quam optio.
+            Magni porro cumque placeat nihil reprehenderit, accusamus facilis eius voluptates quibusdam temporibus quas
+            provident eveniet odit molestias deleniti esse, earum tempore! Nihil, sunt corporis.</p>
+
+        <p>Regards, <strong>Arta Shaqiri</strong></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My page. All rights reserved Arta Shaqiri </p>
+    </footer>
+
+    <script>
+
+        function darkMode() {
+            let bodyElement = document.body;
+            bodyElement.classList.remove('light-mode');
+            bodyElement.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+        };
+
+        function lightMode() {
+            let bodyElement = document.body;
+            bodyElement.classList.remove('dark-mode');
+            bodyElement.classList.add('light-mode');
+            localStorage.setItem('theme', 'light-mode')
+        };
+
+        document.addEventListener('DOMContentLoaded',function() {
+            let savedTheme = localStorage.getItem('theme');
+            if(savedTheme){
+                let bodyElement = document.body;
+                bodyElement.classList.remove('light-mode', 'dark-mode');
+                bodyElement.classList.add(savedTheme);
+            }
+        } );
+    </script>
+</body>
+
+</html>

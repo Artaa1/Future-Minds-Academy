@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<style>
+    body {
+        font-family: monospace, sans-serif;
+        display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #edebeb;;
+    }
+
+    #container {
+        
+        padding: 20px;
+        background-color: #fff; 
+            box-shadow: 5px 5px 10px rgba(23, 21, 21, 0.9); 
+            border-radius: 8px; 
+        border: 1px solid black;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+    }
+
+    label {
+        margin-top: 5px;
+        margin-bottom: 3px;
+    }
+
+    input{
+        padding: 4px;
+        box-shadow: 1px 1px 10px rgba(23, 21, 21, 0.9); 
+    }
+    input:focus{
+        border: 1px solid blue;
+    }
+
+    #requirements {
+        margin-top: 10px;
+    }
+
+    #requirements p {
+        color: red;
+    }
+
+    #requirements p.valid {
+        color: green;
+    }
+
+    #submitBtn:disabled {
+        background-color: lightgray;
+        cursor: not-allowed;
+    }
+   
+</style>
+
+<body>
+    <div id="container">
+        <form id="passwordForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <div id="requirements">
+                <p id="lowercase">At least one lowercase letter</p>
+                <p id="uppercase">At least one uppercase letter</p>
+                <p id="number">At least one number</p>
+                <p id="special">At least one of (.,'!#)</p>
+            </div>
+            <button type="submit" id="submitBtn" disabled>Submit</button>
+        </form>
+    </div>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let emailInput = document.getElementById('email');
+            let passwordInput = document.getElementById('password');
+            let lowercaseReq = document.getElementById('lowercase');
+            let uppercaseReq = document.getElementById('uppercase');
+            let numberReq = document.getElementById('number');
+            let specialReq = document.getElementById('special');
+            let submitBtn = document.getElementById('submitBtn');
+
+            const isLowerCase = /[a-z]/;
+            const isUpperCase = /[A-Z]/;
+            const hasNumber = /\d/;
+            const hasSpecial = /[.,'!#]/;
+
+            emailInput.addEventListener('input', validateForm);
+            passwordInput.addEventListener('input', validateForm);
+
+            function validateForm() {
+                const emailValid = emailInput.checkValidity();
+                const passwordValid = validatePassword(passwordInput.value);
+
+                lowercaseReq.classList.toggle('valid', passwordValid.lowercase);
+                uppercaseReq.classList.toggle('valid', passwordValid.uppercase);
+                numberReq.classList.toggle('valid', passwordValid.number);
+                specialReq.classList.toggle('valid', passwordValid.special);
+
+                submitBtn.disabled = !(emailValid && passwordValid.lowercase && passwordValid.uppercase && passwordValid.number && passwordValid.special);
+            }
+
+            function validatePassword(password) {
+                return {
+                    lowercase: isLowerCase.test(password),
+                    uppercase: isUpperCase.test(password),
+                    number: hasNumber.test(password),
+                    special: hasSpecial.test(password)
+                };
+            }
+        });
+
+    </script>
+</body>
+
+</html>

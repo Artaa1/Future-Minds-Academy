@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User{
+            email;
+            #password;
+
+            constructor(email,password){
+                this.email = email;
+                this.#password = password;
+            }
+        }
+
+        let myUser = new User('a@b.c', 'xyz');
+        let user = document.createElement('h1');
+        user.textContent = myUser.password;
+        document.body.appendChild(user);
+
+        class Person{
+            firsName;
+            lastName;
+
+            constructor(firsName, lastName){
+                this.firsName = firsName;
+                this.lastName = lastName;
+            }
+            getFullName(){
+                return `${this.firsName} ${this.lastName}`;
+            }
+        }
+
+        class Professor extends Person{
+            degree;
+
+            constructor(firsName, lastName, degree){
+                super(firsName, lastName);
+                this.degree = degree;
+            }
+        }
+
+        let prof = new Professor('john', 'Doe', 'Bachelor\'s');
+        let profParagraph = document.createElement('p');
+        profParagraph.textContent = prof.getFullName();
+        document.body.appendChild(profParagraph);
+
+        
+
+    </script>
+</body>
+</html>
