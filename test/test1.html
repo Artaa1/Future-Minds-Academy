@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard Sidebar Menu</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: #333;
+    padding-top: 20px;
+    color: white;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+</style>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Sidebar Menu</h2>
+            <ul>
+                <li><a href="#" onclick="changeContent('Home')">Home</a></li>
+                <li><a href="#" onclick="changeContent('Dashboard')">Dashboard</a></li>
+                <li><a href="#" onclick="changeContent('Profile')">Profile</a></li>
+                <li><a href="#" onclick="changeContent('Settings')">Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Welcome to the Dashboard!</h2>
+            <p>This is the default content. Click on the menu items to change the content.</p>
+        </div>
+    </div>
+
+    <script>
+function changeContent(page) {
+    document.querySelector('.content h2').textContent = `Welcome to ${page}!`;
+    document.querySelector('.content p').textContent = `This is the ${page} page content.`;
+}
+
+    </script>
+</body>
+</html>
