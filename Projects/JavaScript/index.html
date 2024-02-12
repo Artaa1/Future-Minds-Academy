@@ -14,24 +14,32 @@
 </head>
 
 <body>
-    <div id="side-bar" class="side-bar">
+    <div class="side-bar" id="side-bar">
         <nav>
             <div class="side">
 
                 <p class="bar-title"> CP <span class="cp">COOL PAGE</span> </p>
                 <div class="horizontal-line1"></div><br>
                 <div class="user">
+                    <div class="userClick">
                     <img src="images/avatar.jpg" alt="Avatar image" class="avatar-img">
                     <p class="user-name">John Doe</p>
+                  
                     <span class="material-symbols-outlined expland1">expand_more </span>
-                    <div class="side-dropdown">
-                    <ul class="dropdown-list" >
-                        <li><a href="#">MP My Profile</a></li>
-                        <li><a href="#">EP Edit Profile</a></li>
-                        <li><a href="#">S Settings</a></li>
-                    </ul>
                 </div>
+                 <div class="sub-menu1">
+                    <p><span class="sidebar-mini"> MP </span>
+                        <span class="sidebar-normal"> My Profile </span>
+                    </p>
+                    <p><span class="sidebar-mini"> EP </span>
+                        <span class="sidebar-normal"> Edit Profile </span>
+                    </p>
+                    <p>
+                        <span class="sidebar-mini"> S </span>
+                        <span class="sidebar-normal"> Settings </span>
+                    </p>
                 </div>
+            </div>
             </div>
             <br>
             <div class="horizontal-line1"></div>
@@ -43,30 +51,37 @@
                             <span class="menu"> Dashboard</span>
                         </a>
                     </li>
-                    <li class="menu-bar">
+                    <li class="menu-bar" >
                         <a href="#">
                             <i class="material-icons">panorama</i>
-                            <span class="menu" id="description"> Pages</span>
-                            <span class="material-symbols-outlined expland">expand_more </span></a>
-                            <div class="side-dropdown">
-                            <ul class="dropdown-list">
-                                <li class="options"><a href="#"><span class="sidebar-mini">P</span><span>Pricing</span></a>
-                                </li>
-                                <li class="options"><a href="#"><span class="sidebar-mini">RS</span><span>RTL
-                                            Support</span></a></li>
-                                <li class="options"><a href="#"><span class="sidebar-mini">
-                                            T</span><span>Timeline</span></a></li>
-                                <li class="options"><a href="#"><span class="sidebar-mini">LP</span><span>Login Page</span>
-                                    </a></li>
-                                <li class="options"><a href="#"><span class="sidebar-mini">RP</span><span>Register
-                                            Page</span> </a></li>
-                                <li class="options"><a href="#"><span class="sidebar-mini">LSP</span><span>Lock Screen
-                                            Page</span></a></li>
-                                <li class="options"><a href="#"><span class="sidebar-mini">UP</span><span> User
-                                            Profile</span></a></li>
-                            </ul>
+                            <span class="menu"> Pages</span>
+                            <span class="material-symbols-outlined expland">expand_more </span>
+                        </a>
+                        <div class="sub-menu">
+                            <p><span class="sidebar-mini"> P </span>
+                                <span class="sidebar-normal"> Pricing </span>
+                            </p>
+                            <p><span class="sidebar-mini"> RS </span>
+                                <span class="sidebar-normal"> RTL Support </span>
+                            </p>
+                            <p><span class="sidebar-mini"> T </span>
+                                <span class="sidebar-normal"> Timeline </span>
+                            </p>
+                            <p><span class="sidebar-mini"> LP </span>
+                                <span class="sidebar-normal"> Login Page </span>
+                            </p>
+                            <p>
+                                <span class="sidebar-mini"> RP </span>
+                                <span class="sidebar-normal"> Register Page </span>
+                            </p>
+                            <p>
+                                <span class="sidebar-mini"> LSP </span>
+                                <span class="sidebar-normal"> Lock Screen Page </span>
+                            </p>
+                            <p><span class="sidebar-mini"> UP </span>
+                                <span class="sidebar-normal"> User Profile </span>
+                            </p>
                         </div>
-                        
                     </li>
                     <li class="menu-bar">
                         <a href="#">
@@ -74,16 +89,30 @@
                             <span class="menu">Components</span>
                             <span class="material-symbols-outlined expland"> expand_more </span>
                         </a>
-                        <div class="side-dropdown">
-                            <ul class="dropdown-list">
-                                <li class="options"><a href="#">B Buttons</a></li>
-                                <li class="options"><a href="#">GS Grid System</a></li>
-                                <li class="options"><a href="#">P Panels</a></li>
-                                <li class="options"><a href="#">SA Sweet Alert</a></li>
-                                <li class="options"><a href="#">N Notifications</a></li>
-                                <li class="options"><a href="#">I Icons</a></li>
-                                <li class="options"><a href="#">T Typography</a></li>
-                            </ul>
+                        <div class="sub-menu">
+                            <p><span class="sidebar-mini"> B </span>
+                                <span class="sidebar-normal"> Buttons </span>>
+                            </p>
+                            <p><span class="sidebar-mini"> GS </span>
+                                <span class="sidebar-normal"> Grid System </span>
+                            </p>
+                            <p><span class="sidebar-mini"> P </span>
+                                <span class="sidebar-normal"> Panels </span>
+                            </p>
+                            <p><span class="sidebar-mini"> SA </span>
+                                <span class="sidebar-normal"> Sweet Alert </span>
+                            </p>
+                            <p>
+                                <span class="sidebar-mini"> N </span>
+                                <span class="sidebar-normal"> Notifications </span>
+                            </p>
+                            <p>
+                                <span class="sidebar-mini"> I </span>
+                                <span class="sidebar-normal"> Icons </span>
+                            </p>
+                            <p><span class="sidebar-mini"> T </span>
+                                <span class="sidebar-normal"> Typography </span>
+                            </p>
                         </div>
                     </li>
                     <li class="menu-bar">
@@ -92,14 +121,19 @@
                             <span class="menu">Forms</span>
                             <span class="material-symbols-outlined expland"> expand_more </span>
                         </a>
-                        <div class="side-dropdown">
-                            <ul class="dropdown-list">
-                                <li class="options"><a href="#">RF Regular Forms</a></li>
-                            <li class="options"><a href="#">EF Extended Forms</a></li>
-                            <li class="options"><a href="#">VF Validation Forms</a></li>
-                            <li class="options"><a href="#">W Wizard</a></li>
-                            </ul>
-
+                        <div class="sub-menu">
+                            <p><span class="sidebar-mini"> RF </span>
+                                <span class="sidebar-normal"> Regular Forms </span>
+                            </p>
+                            <p><span class="sidebar-mini"> EF </span>
+                                <span class="sidebar-normal"> Extended Forms </span>
+                            </p>
+                            <p><span class="sidebar-mini"> VF </span>
+                                <span class="sidebar-normal"> Validation Forms </span>
+                            </p>
+                            <p><span class="sidebar-mini"> W </span>
+                                <span class="sidebar-normal"> Wizard </span>
+                            </p>
                         </div>
                     </li>
                     <li class="menu-bar">
@@ -108,12 +142,16 @@
                             <span class="menu">Tables</span>
                             <span class="material-symbols-outlined expland">expand_more </span>
                         </a>
-                        <div class="side-dropdown">
-                            <ul class="dropdown-list">
-                                <li class="options"><a href="#">RT Regular Tables</a></li>
-                            <li class="options"><a href="#">ET Extended Tables</a></li>
-                            <li class="options"><a href="#">DT DataTables.net</a></li>
-                            </ul>
+                        <div class="sub-menu">
+                            <p><span class="sidebar-mini"> RT </span>
+                                <span class="sidebar-normal"> Regular Tables </span>
+                            </p>
+                            <p><span class="sidebar-mini"> ET </span>
+                                <span class="sidebar-normal"> Extended Tables </span>
+                            </p>
+                            <p><span class="sidebar-mini"> DT </span>
+                                <span class="sidebar-normal"> DataTables.net </span>
+                            </p>
                         </div>
                     </li>
                     <li class="menu-bar">
@@ -122,13 +160,17 @@
                             <span class="menu"> Maps</span>
                             <span class="material-symbols-outlined expland"> expand_more </span>
                         </a>
-                        <div class="side-dropdown">
-                            <ul class="dropdown-list">
-                                <li class="options"><a href="#">GM Google Maps</a></li>
-                            <li class="options"><a href="#">FSM Full Screen Map</a></li>
-                            <li class="options"><a href="#">VM Vector Map</a></li>
-                            </ul>
-                        </div>
+                        <div class="sub-menu">
+                            <p><span class="sidebar-mini"> GM </span>
+                                <span class="sidebar-normal"> Google Maps </span>
+                            </p>
+                            <p><span class="sidebar-mini"> FSM </span>
+                                <span class="sidebar-normal"> Full Screen Map </span>
+                            </p>
+                            <p><span class="sidebar-mini"> VM </span>
+                                <span class="sidebar-normal"> Vector Map </span>
+                            </p>
+                        </ul>
                     </li>
                     <li class="menu-bar">
                         <a href="#">
@@ -139,7 +181,7 @@
                     </li>
                     <li class="menu-bar">
                         <a href="#">
-                            <span class="material-symbols-outlined icon-bar">show_chart </span>
+                            <i class="material-icons icon-bar">show_chart</i>
                             <span class="menu"> Charts</span>
                             <span class="material-symbols-outlined expland">expand_more </span>
                         </a>
@@ -164,6 +206,7 @@
                     <span class="tooltip">See More</span> Dashboard</span>
 
             </div>
+
             <div class="dashboard-mob">
                 <span>Dashboard</span>
             </div>
@@ -184,7 +227,9 @@
                         notifications
                     </i><span class="tooltip-notification">Notifications</span>
                     <div class="notifications-bar">
-                        <ul  id="notifications"></ul>
+                        <ul id="notifications" class="notifications-list">
+
+                        </ul>
 
                     </div>
                 </div>
@@ -330,6 +375,11 @@
                         <p class="words-under-photo1">
                             <span class="material-symbols-outlined edit-icon"> edit</span>
                             <span class="tooltip-edit">Edit</span>
+                            <div class="popup" id="popup">
+                                <h2>Thank You!</h2>
+                                <p>Your details has been successfully submitted. Thanks!</p>
+                                <button type="button" id="closePopup">OK</button>
+                            </div>
                         </p>
                         <p class="words-under-photo">
                             <span class="material-symbols-outlined close-icon">close</span>
@@ -338,8 +388,8 @@
                     </div>
                 </div>
                 <div class="details-more">
-                    <p class="details-title">Cozy 5 Starts Apartament</p>
-                    <p class="details-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                    <p class="details-title" contenteditable="true" id="placeholderText">Cozy 5 Starts Apartament</p>
+                    <p class="details-paragraph" contenteditable="true" id="placeholderText2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
                         autem
                         quibusdam fuga dolores suscipit deserunt debitis repellendus assumenda, consectetur
                         quod?
@@ -367,18 +417,21 @@
                             <span class="tooltip-view">View</span>
                         </p>
                         <p class="words-under-photo1">
-                            <span class="material-symbols-outlined edit-icon">edit </span>
+                            <span class="material-symbols-outlined edit-icon" >edit </span>
                             <span class="tooltip-edit">Edit</span>
+                           
                         </p>
+                        
                         <p class="words-under-photo">
-                            <span class="material-symbols-outlined close-icon"> close</span>
+                            <span class="material-symbols-outlined close-icon2"> close</span>
                             <span class="tooltip-close">Delete</span>
                         </p>
                     </div>
                 </div>
+               
                 <div class="details-more">
-                    <p class="details-title">Office Studio</p>
-                    <p class="details-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                    <p class="details-title" contenteditable="true" id="placeholderText3">Office Studio</p>
+                    <p class="details-paragraph" contenteditable="true" id="placeholderText4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
                         autem
                         quibusdam fuga dolores suscipit deserunt debitis repellendus assumenda, consectetur
                         quod?
@@ -394,6 +447,7 @@
                         <span class="location1">London,UK</span>
                     </div>
                 </div>
+               
             </div>
             <div class="menage-item3">
                 <div class="hover-card">
@@ -410,14 +464,14 @@
                             <span class="tooltip-edit">Edit</span>
                         </p>
                         <p class="words-under-photo">
-                            <span class="material-symbols-outlined close-icon">close</span>
+                            <span class="material-symbols-outlined close-icon3">close</span>
                             <span class="tooltip-close">Delete</span>
                         </p>
                     </div>
                 </div>
                 <div class="details-more">
-                    <p class="details-title">Beautiful Castele</p>
-                    <p class="details-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                    <p class="details-title" contenteditable="true" id="placeholderText5">Beautiful Castele</p>
+                    <p class="details-paragraph" contenteditable="true" id="placeholderText6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
                         autem
                         quibusdam fuga dolores suscipit deserunt debitis repellendus assumenda, consectetur
                         quod?
@@ -434,6 +488,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="popup" id="popup">
+            <h2>Thank You!</h2>
+            <p>Your details has been successfully submitted. Thanks!</p>
+            <button type="button" id="closePopup">OK</button>
         </div>
         <div class="horizontal-line"></div>
 
@@ -457,19 +516,19 @@
         <div class="filters">
             <p class="fixed-title">SIDEBAR FILTERS</p>
             <div class="fixed-colors">
-                <span class="purple color"></span>
-                <span class="blue color"></span>
-                <span class="green color"></span>
-                <span class="orange color"></span>
-                <span class="red color"></span>
-                <span class="pink color"></span>
+                <span class="purple color" id="purpleSpan"></span>
+                <span class="blue color" id="blueSpan"></span>
+                <span class="green color" id="greenSpan"></span>
+                <span class="orange color" id="orangeSpan"></span>
+                <span class="red color" id="redSpan"></span>
+                <span class="pink color" id="pinkSpan"></span>
             </div>
         </div>
         <div class="horizontal-line"></div>
         <div class="background">
             <p class="fixed-title">SIDEBAR BACKGROUND</p>
             <div class="fixed-colors">
-                <span class="white color"></span>
+                <span class="white color" id="white-background"></span>
                 <span class="black color"></span>
             </div>
         </div>
@@ -491,7 +550,7 @@
                 <span><a class="img-holder" href="#"><img src="images/card-2.jpeg"> </a> </span>
             </div>
         </div>
-   
+
     </div>
 
     <script src="js/index.js" type="module" defer>

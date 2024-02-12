@@ -10,44 +10,71 @@ sidebarControl.addEventListener('click', () => {
 
 
 let expandIcon = document.querySelectorAll('.expland');
+let pagesMenu = document.querySelector('.menu-bar');
+let dropdown = document.querySelector('.sub-menu');
 
 expandIcon.forEach(function(icon) {
     icon.addEventListener('click', function(){
         let parentItem = icon.closest('.menu-bar');
-        let dropdown = parentItem.querySelector('.dropdown-list');
+        let dropdown = parentItem.querySelector('.sub-menu');
 
         if(dropdown) {
-            parentItem.classList.toggle('active');
+            parentItem.classList.toggle('open');
             icon.classList.toggle('rotate');
 
-            if(parentItem.classList.contains('active')){
-                let dropdownHeight = dropdown.offsetHeight;
-                parentItem.style.marginBottom = dropdownHeight + 'px';
-            } else {
-                parentItem.style.marginBottom = '0';
-            }
+            
         }
     })
+  
+});
+pagesMenu.addEventListener('click', function(){
+    dropdown.classList.toggle('open');
+
 })
 
-let expand1Icon = document.querySelectorAll('.expland1');
+let expandIcon2 = document.querySelectorAll('.expland1');
+let pagesMenu2 = document.querySelector('.user');
+let dropdown2 = document.querySelector('.sub-menu1');
 
-expandIcon.forEach(function(icon) {
+expandIcon2.forEach(function(icon) {
     icon.addEventListener('click', function(){
         let parentItem = icon.closest('.user');
-        let dropdown = parentItem.querySelector('.dropdown-list');
+        let dropdown = parentItem.querySelector('.sub-menu1');
 
         if(dropdown) {
-            parentItem.classList.toggle('active');
+            parentItem.classList.toggle('openUser');
             icon.classList.toggle('rotate');
 
-            if(parentItem.classList.contains('active')){
-                let dropdownHeight = dropdown.offsetHeight;
-                parentItem.style.marginBottom = dropdownHeight + 'px';
-            } else {
-                parentItem.style.marginBottom = '0';
-            }
+            
         }
     })
+  
+});
+pagesMenu2.addEventListener('click', function(){
+    dropdown2.classList.toggle('openUser');
+
 })
+
+
+
+/*let dropdownItems = sidebar.querySelectorAll('.menu-bar')
+
+dropdownItems.forEach(item => {
+    let subList = item.parentElement.querySelector('.sub-menu')
+    item.addEventListener('click', () => {
+        subList.classList.toggle('open');
+
+         let expandIcon = this.querySelector('.expland');
+          expandIcon.style.transform = expandIcon.style.transform === 'rotate(180deg)' ? 'rotate(0deg)' : 'rotate(180deg)';
+    })
+})*/
+
+
+
+
+
+
+
+
+
 
