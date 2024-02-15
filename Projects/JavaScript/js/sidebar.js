@@ -3,6 +3,11 @@ let sidebar = document.getElementById('side-bar');
 
 sidebarControl.addEventListener('click', () => {
     sidebar.classList.toggle('collapsed')
+    if (sidebar.classList.contains('collapsed')) {
+        sidebarControl.innerHTML = 'menu';
+    } else {
+        sidebarControl.innerHTML = 'more_vert';
+    }
 })
 
 
