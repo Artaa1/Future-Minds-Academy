@@ -6,6 +6,7 @@
 */
 
 :root {
+    --primary-font-size: 24px;
     --box-shadow-icon-color: rgba(0, 0, 0, 0.10);
     --box-shadow-icon-color-hover: 0 0 5px 2px rgba(0, 0, 0, 0.2);
     --border-color: rgba(0, 0, 0, 0.10);
@@ -31,10 +32,8 @@ body {
     font-family: "Roboto", sans-serif;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 300px, 1fr;
-    grid-template-columns: 300px, 1fr;
-    -ms-grid-rows: 1fr;
-    grid-template-rows: 1fr;
+    -ms-grid-columns: 300px 1fr;
+    grid-template-columns: 300px 1fr;
     font-weight: 100;
 
 }
@@ -215,10 +214,10 @@ a {
 
 .menu-bar1 {
     margin-top: 17px;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 10px;
     background-color: var(--menu-bar-color);
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     color: white;
     display: -webkit-box;
@@ -1035,7 +1034,7 @@ td {
 
 .menage-list-title {
     padding-left: 25px;
-    padding-bottom: 23px;
+    
     padding-top: 60px;
     font-size: 2rem;
 
@@ -1313,7 +1312,8 @@ td {
     -webkit-transition: opacity 0.3s;
     -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
-    z-index: 0;
+    z-index: 2;
+    opacity: 0;
 }
 
 
@@ -1445,7 +1445,7 @@ footer {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 50px;
+    padding: 30px;
 
 
 }
@@ -1470,30 +1470,9 @@ footer {
 
 
 
-.card {
-    border-radius: 15px;
-    gap: 1.5rem;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-
-}
 
 
 
-
-.card img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    margin-top: -4rem;
-    -webkit-transition: -webkit-transform 0.3s ease-in-out;
-    transition: -webkit-transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    cursor: -webkit-pointer;
-    cursor: pointer;
-}
 
 .expland {
     margin-left: auto;
@@ -1713,7 +1692,7 @@ footer {
 
 
 body:has(#side-bar.collapsed) {
-    grid-template-columns: 82px auto;
+    grid-template-columns: 100px auto;
 }
 
 .switch {
@@ -1889,6 +1868,7 @@ input:checked+.slider:before {
     transform-origin: top;
     transform: translateY(100%);
     transition: transform 3s ease 5s;
+    
 
 }
 
@@ -1988,7 +1968,7 @@ input:checked+.slider:before {
 }
 
 .card-info {
-    background-color: lightgreen;
+    
     margin: 10px;
     padding: 10px;
     color: blue;
@@ -2162,44 +2142,404 @@ input:checked+.slider:before {
 
 }
 .img-holder img {
-    width: 100%; /* Mbush hapësirën e plotë të kontejnerit */
+    width: 100%; 
     height: 100%;
-    object-fit: cover; /* Ruaj raportin e aspektit të imazhit */
+    object-fit: cover; /
 }
 
 
-.tooltip-view,
-.tooltip-edit,
-.tooltip-close {
+.header-icon-dashboard {
+    margin-left: 1.2rem;
+}
+
+.header-icon {
+    cursor: pointer;
     position: relative;
-    display: inline-block;
 }
 
-.tooltip-view::after,
-.tooltip-edit::after,
-.tooltip-close::after {
-    content: attr(data-tooltip);
+.header-icon .material-icons {
+    font-size: var(--primary-font-size)
+}
+
+.header-icon.tooltip-hover::before {
+    content: attr(title);
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 4px 8px;
+    background-color: black;
+    color: var(--default-color);
+    padding: 5px 10px;
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    font-size: 12px;
     white-space: nowrap;
-    visibility: hidden;
+    font-size: 12px;
     opacity: 0;
-    transition: visibility 0s, opacity 0.2s linear;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    bottom: -30px;
+    left: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
-.tooltip-view:hover::after,
-.tooltip-edit:hover::after,
-.tooltip-close:hover::after {
-    visibility: visible;
+.header-icon.tooltip-hover:hover::before {
     opacity: 1;
+    visibility: visible;
 }
+
+.header-icon.tooltip-hover::before {
+    content: attr(data-tooltip);
+}
+
+.burst_mode {
+    color: rgba(128, 128, 128, 0.733);
+}
+
+
+.edit-icon {
+    color: #4CAF50; 
+}
+
+.material-icons {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.material-icons {
+    font-size: 24px;
+
+}
+
+.view-icon {
+    color: #010101; 
+}
+.delete-icon {
+    color: #F44336; 
+}
+
+/*.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    margin-left: 2rem;
+    margin-right: 1.5rem;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+}
+
+.card-wraper {
+    padding: 1.2rem;
+    border-radius: 0.6rem;
+    background-color: var(--default-color);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.card {
+    border-radius: 15px;
+    gap: 1.5rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+.card-icons {
+    position: relative;
+    top: -20px;
+    left: 50%;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    cursor: -webkit-pointer;
+    cursor: pointer;
+}
+
+.card-hovered:hover .card-icons {
+    opacity: 1;
+    cursor: pointer;
+    cursor: -webkit-pointer;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-top: -4rem;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    cursor: -webkit-pointer;
+    cursor: pointer;
+}
+
+.card-hovered:hover img {
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 1;
+
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.733);
+}
+
+.card-paragraf {
+    text-align: center;
+    padding-top: 1.5rem;
+    color: rgba(31, 28, 28, 0.336);
+
+}
+
+.separator {
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+.bottom-content {
+    
+    margin-top: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-end;
+    padding: 5px;
+
+}
+
+.price,
+.location {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: end;
+
+}
+
+.location {
+    color: rgba(0, 0, 0, 0.479);
+
+}
+
+.burst_mode {
+    color: rgba(128, 128, 128, 0.733);
+}
+
+.close {
+    color: rgba(255, 0, 0, 0.678);
+}
+
+.edit {
+    color: rgba(0, 128, 0, 0.644);
+}
+
+.header-icon.tooltip-hover::before {
+    content: attr(title);
+    position: absolute;
+    background-color: black;
+    color: var(--default-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    bottom: -30px;
+    left: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.header-icon.tooltip-hover:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header-icon.tooltip-hover::before {
+    content: attr(data-tooltip);
+}*/
+
+.cgreen {
+    color: green;
+    cursor: pointer;
+}
+
+.cgrey {
+    color: grey;
+    cursor: pointer;
+}
+
+.cred {
+    color: red;
+    cursor: pointer;
+}
+
+.card {
+    margin-top: 100px;
+    background: white;
+    text-align: center;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    width: 280px;
+}
+
+.animation {
+    margin: -10px 0;
+}
+
+.animation img {
+    width: 90%;
+    height: 100%;
+    position: relative;
+    top: -20px;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.animationIcons {
+    position: relative;
+    top: -3rem;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+}
+
+.animation:hover img {
+    top: -60px;
+}
+
+.animation:hover .animationIcons {
+    visibility: visible;
+}
+
+.cardH1 {
+    margin-top: 20px;
+    font-size: 1.7em;
+    
+   
+}
+
+.card p {
+   
+    margin-top: 20px;
+    color: grey;
+    margin-bottom: 50px;
+}
+
+.cardBottomP {
+    margin-bottom: 0px !important;
+   
+}
+
+.card hr {
+    margin: 0;
+    margin-top: auto;
+}
+
+.cardBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.price{
+
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    font-size: 1.2rem;
+
+}
+.city{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17px;
+    font-size: 0.8rem;
+}
+.country{
+    margin-bottom: 17px;
+    font-size: 0.8rem;
+}
+.location1{
+    margin-bottom: 17px;
+}
+.cardBottom p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    color: grey;
+}
+
+.section3div {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.description{
+    padding-top: 1.2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+
+
 
 
 @keyframes hideSubMenu {
@@ -2233,6 +2573,10 @@ input:checked+.slider:before {
 
     .left {
         display: none;
+    }
+    .section3div {
+        flex-direction: column;
+        gap: 70px;
     }
 
 

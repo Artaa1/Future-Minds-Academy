@@ -35,6 +35,11 @@ iconElement.addEventListener('click', function(){
 });
 
 
+document.addEventListener('click', function(event) {
+    if (!containerElement.contains(event.target) && !iconElement.contains(event.target)) {
+        listElement.classList.remove('active');
+    }
+});
 
 containerElement.setAttribute('data-notifications', notifications.length);
 

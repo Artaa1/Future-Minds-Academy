@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         saveSettings()
     });
+   
     function loadSettings() {
         let savedSettings = localStorage.getItem('settings');
         if (savedSettings) {
@@ -186,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSelectedElements();
 
 });
-
 
 
 
