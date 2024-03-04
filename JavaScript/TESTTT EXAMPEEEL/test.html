@@ -21,12 +21,13 @@
     }
 
     .content {
+
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         background: linear-gradient(90deg, #214259, #4788ae);
-}
+    }
 
     .title {
         margin: 0;
@@ -69,6 +70,24 @@
         padding: 10px;
     }
 
+
+
+    #popup {
+        display: none;
+        text-align: center;
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: whitesmoke;
+        padding: 20px;
+        border: 1px solid black;
+        z-index: 1000;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
     .highest-rated {
         border: 2px solid gold;
         max-width: 250px;
@@ -78,6 +97,9 @@
 
 <body>
     <h1 class="title">The sorting of movies by rating</h1>
+    <div id="popup" onclick="closePopup()">
+
+    </div>
     <script>
 
         let movies = [
@@ -119,49 +141,57 @@
             }
         ];
 
-        let highRatedMovies = movies.filter((item) => {
-            return item.rating >= 8.5;
-        })
 
-        highRatedMovies.sort((a, b) => b.rating - a.rating);
-
+        movies.sort((a, b) => b.rating - a.rating);
         let content = document.createElement('div');
         content.classList.add('content');
-        document.body.appendChild(content)
 
-
-        highRatedMovies.forEach((movie, index) => {
+        movies.forEach((movie, index) => {
             let listItem = document.createElement('li');
             listItem.classList.add('movie');
 
             if (index == 0) {
                 listItem.classList.add('highest-rated')
-            }
+            };
 
             let image = document.createElement('img');
             image.src = movie.imageUrl;
+            image.addEventListener('click', function() {
+                togglePopup(movie);
+            });
+
+          
             listItem.appendChild(image);
-
-            let movieInfo = document.createElement('div');
-            movieInfo.classList.add('movie-info');
-            movieInfo.innerHTML = `<h3>${movie.name}</h3>
-            <p>Release Year: ${movie.releaseYear}</p>
-                <p>Main Actors: ${movie.mainActors.join(', ')}</p>
-                <p>Rating: ${movie.rating}`;
-
-            listItem.appendChild(movieInfo);
             content.appendChild(listItem);
 
-            setInterval(() => {
+            setTimeout(() => {
                 listItem.style.opacity = '1';
-                listItem.style.transform = 'translateY(0)';
-            }, 1000 * index)
+            }, 1000 * index);
+
         });
 
-       
+        function togglePopup(movie){
+            let popupDiv = document.getElementById('popup');
 
-        document.body.appendChild(content);
+            if(popupDiv.style.display == 'block'){
+                popupDiv.style.display = 'none';
+                popupDiv.innerHTML = '';
+                popupDiv.classList.remove('popup-class');
+            } else {
+                popupDiv.style.display = 'block';
+                popupDiv.innerHTML = `<h1>${movie.name}</h1>
+                <p>Actors: ${movie.mainActors.join(', ')}</p>
+                <h4>Rating: ${movie.rating}</h4>`;
+                popupDiv.classList.add('popup-class');
 
+            }
+        };
+
+function closePopup(){
+    let popupDiv = document.getElementById('popup');
+    popupDiv.style.display = 'none';
+}
+        document.body.appendChild(content)
 
     </script>
 </body>

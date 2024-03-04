@@ -21,6 +21,7 @@
     }
 
     .content {
+       
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
@@ -69,17 +70,33 @@
         padding: 10px;
     }
 
-    .highest-rated {
-        border: 2px solid gold;
-        max-width: 250px;
-        box-shadow: 6px 6px 10px rgb(38, 35, 35);
+  
+    #popup{
+        display: none;
+        text-align: center;
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: whitesmoke;
+        padding: 20px;
+        border: 1px solid black;
+        z-index: 1000;
+        border-radius: 5px;
+        cursor: pointer;
     }
+
+   
+    
 </style>
 
 <body>
     <h1 class="title">The sorting of movies by rating</h1>
+    <div id="popup" onclick="closePopup()">
+       
+    </div>
     <script>
-
         let movies = [
             {
                 name: 'The Godfather',
@@ -87,7 +104,6 @@
                 rating: 9.2,
                 mainActors: ['Marlon Brando', 'Al Pacino', 'James Caan'],
                 imageUrl: 'images/the-god-father.jpg'
-
             },
             {
                 name: 'The Shawshank Redemption',
@@ -108,7 +124,7 @@
                 releaseYear: 2008,
                 rating: 9.0,
                 mainActors: ['Christian Bale', 'Heath Ledger', 'Aaron Eckhart'],
-                imageUrl: 'images/the-dark-Knigh.jpg'
+                imageUrl: 'images/the-dark-Knight.jpg'
             },
             {
                 name: 'Forrest Gump',
@@ -118,52 +134,26 @@
                 imageUrl: 'images/forrest-gump.jpg'
             }
         ];
-
-        let highRatedMovies = movies.filter((item) => {
-            return item.rating >= 8.5;
-        })
-
-        highRatedMovies.sort((a, b) => b.rating - a.rating);
-
+    
+        movies.sort((a, b) => b.rating - a.rating);
+    
         let content = document.createElement('div');
         content.classList.add('content');
-        document.body.appendChild(content)
-
-
-        highRatedMovies.forEach((movie, index) => {
-            let listItem = document.createElement('li');
-            listItem.classList.add('movie');
-
-            if (index == 0) {
-                listItem.classList.add('highest-rated')
-            }
-
+    
+        movies.forEach((movie, index) => {
+            let listElement = document.createElement('li');
+            listElement.classList.add('movie');
+    
             let image = document.createElement('img');
-            image.src = movie.imageUrl;
-            listItem.appendChild(image);
-
-            let movieInfo = document.createElement('div');
-            movieInfo.classList.add('movie-info');
-            movieInfo.innerHTML = `<h3>${movie.name}</h3>
-            <p>Release Year: ${movie.releaseYear}</p>
-                <p>Main Actors: ${movie.mainActors.join(', ')}</p>
-                <p>Rating: ${movie.rating}`;
-
-            listItem.appendChild(movieInfo);
-            content.appendChild(listItem);
-
-            setInterval(() => {
-                listItem.style.opacity = '1';
-                listItem.style.transform = 'translateY(0)';
-            }, 1000 * index)
+      image.src = movie.imageUrl;
+    
+            listElement.appendChild(image);
+            content.appendChild(listElement);
         });
-
-       
-
+    
         document.body.appendChild(content);
-
-
     </script>
+    
 </body>
 
 </html>

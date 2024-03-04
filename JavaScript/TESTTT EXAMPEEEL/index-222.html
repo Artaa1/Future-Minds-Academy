@@ -21,6 +21,7 @@
     }
 
     .content {
+       
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
@@ -69,15 +70,33 @@
         padding: 10px;
     }
 
-    .highest-rated {
-        border: 2px solid gold;
-        max-width: 250px;
-        box-shadow: 6px 6px 10px rgb(38, 35, 35);
+  
+
+    #popup{
+        display: none;
+        text-align: center;
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: whitesmoke;
+        padding: 20px;
+        border: 1px solid black;
+        z-index: 1000;
+        border-radius: 5px;
+        cursor: pointer;
     }
+
+    
+    
 </style>
 
 <body>
     <h1 class="title">The sorting of movies by rating</h1>
+    <div id="popup" onclick="closePopup()">
+      
+    </div>
     <script>
 
         let movies = [
@@ -119,49 +138,51 @@
             }
         ];
 
-        let highRatedMovies = movies.filter((item) => {
-            return item.rating >= 8.5;
-        })
+      
 
-        highRatedMovies.sort((a, b) => b.rating - a.rating);
+      movies.sort((a,b) => b.rating - a.rating);
 
-        let content = document.createElement('div');
-        content.classList.add('content');
-        document.body.appendChild(content)
+      let content = document.createElement('div');
+      content.classList.add('content');
 
+      movies.forEach((movie, index) => {
+        listItem = document.createElement('li');
+        listItem.classList.add('movies');
 
-        highRatedMovies.forEach((movie, index) => {
-            let listItem = document.createElement('li');
-            listItem.classList.add('movie');
+        let image = document.createElement('img');
+      image.src = movie.imageUrl;
+      image.addEventListener('click', function() {
+        togglePopup(movie)}
+      );
 
-            if (index == 0) {
-                listItem.classList.add('highest-rated')
-            }
+   
+      listItem.appendChild(image);
+      content.appendChild(listItem);
+      });
 
-            let image = document.createElement('img');
-            image.src = movie.imageUrl;
-            listItem.appendChild(image);
+      function togglePopup(movie){
+        let popupDiv = document.getElementById('popup');
+        
+        if(popupDiv.style.display == 'block'){
+            popupDiv.style.display = 'none'
+            popupDiv.innerHTML = '';
+            popupDiv.classList.remove('popup-class');
 
-            let movieInfo = document.createElement('div');
-            movieInfo.classList.add('movie-info');
-            movieInfo.innerHTML = `<h3>${movie.name}</h3>
-            <p>Release Year: ${movie.releaseYear}</p>
-                <p>Main Actors: ${movie.mainActors.join(', ')}</p>
-                <p>Rating: ${movie.rating}`;
+        }else{
+            popupDiv.style.display = 'block'
+            popupDiv.innerHTML = `
+            <h3>${movie.name}</h3>
+            <p>${movie.mainActors.join(', ')}</p>
+            <p>${movie.rating}</p>`
+            popupDiv.classList.add('popup-class');
+        }
+      }
+      function closePopup(){
+        let popupDiv = document.getElementById('popup').style.display = 'none';
+      }
 
-            listItem.appendChild(movieInfo);
-            content.appendChild(listItem);
-
-            setInterval(() => {
-                listItem.style.opacity = '1';
-                listItem.style.transform = 'translateY(0)';
-            }, 1000 * index)
-        });
-
-       
-
-        document.body.appendChild(content);
-
+    
+      document.body.appendChild(content);
 
     </script>
 </body>

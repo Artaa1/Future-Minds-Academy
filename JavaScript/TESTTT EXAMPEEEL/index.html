@@ -21,6 +21,7 @@
     }
 
     .content {
+       
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
@@ -74,10 +75,52 @@
         max-width: 250px;
         box-shadow: 6px 6px 10px rgb(38, 35, 35);
     }
+
+    #popup{
+        display: none;
+        text-align: center;
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: whitesmoke;
+        padding: 20px;
+        border: 1px solid black;
+        z-index: 1000;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #popup-price{
+        color: blueviolet;
+    }
+    #popup img {
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+    }
+    #description{
+        font-size: 0.8em;
+    }
+    .close-button {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    body.popup-open {
+            overflow-y: hidden; 
+        }
+    
 </style>
 
 <body>
     <h1 class="title">The sorting of movies by rating</h1>
+    <div id="popup" onclick="closePopup()">
+        <span id="popup-price"></span>
+        <span id="rating"></span>
+    </div>
     <script>
 
         let movies = [
@@ -119,46 +162,62 @@
             }
         ];
 
-        let highRatedMovies = movies.filter((item) => {
-            return item.rating >= 8.5;
-        })
+      
 
-        highRatedMovies.sort((a, b) => b.rating - a.rating);
+        movies.sort((a, b) => b.rating - a.rating);
 
         let content = document.createElement('div');
         content.classList.add('content');
-        document.body.appendChild(content)
+        
 
 
-        highRatedMovies.forEach((movie, index) => {
-            let listItem = document.createElement('li');
-            listItem.classList.add('movie');
+        movies.forEach((movie, index) => {
+    let listItem = document.createElement('li');
+    listItem.classList.add('movie');
 
-            if (index == 0) {
-                listItem.classList.add('highest-rated')
-            }
+    if (index == 0) {
+        listItem.classList.add('highest-rated')
+    }
 
-            let image = document.createElement('img');
-            image.src = movie.imageUrl;
-            listItem.appendChild(image);
+    let image = document.createElement('img');
+    image.src = movie.imageUrl;
+    image.addEventListener('click', function() {
+        togglePopup(movie);
+    }); 
 
-            let movieInfo = document.createElement('div');
-            movieInfo.classList.add('movie-info');
-            movieInfo.innerHTML = `<h3>${movie.name}</h3>
-            <p>Release Year: ${movie.releaseYear}</p>
-                <p>Main Actors: ${movie.mainActors.join(', ')}</p>
-                <p>Rating: ${movie.rating}`;
+    listItem.appendChild(image);
+    content.appendChild(listItem);
 
-            listItem.appendChild(movieInfo);
-            content.appendChild(listItem);
+    setInterval(() => {
+        listItem.style.opacity = '1';
+       listItem.style.transform = 'translateY(0)';
+   }, 1000 * index)
+});
 
-            setInterval(() => {
-                listItem.style.opacity = '1';
-                listItem.style.transform = 'translateY(0)';
-            }, 1000 * index)
-        });
+        function togglePopup(movie) {
+    let popupDiv = document.getElementById('popup');
+    let body = document.body;
 
-       
+    if (popupDiv.style.display == 'block') {
+        popupDiv.style.display = 'none';
+        popupDiv.innerHTML = '';
+        body.classList.remove('popup-open');
+
+    } else {
+        popupDiv.innerHTML = `
+            <h3>${movie.name}</h3><br>
+            <p>Main Actors: ${movie.mainActors.join(', ')}</p>
+            <p id="popup-price">Rating: ${movie.rating}</p><br>
+        `;
+        popupDiv.style.display = 'block';
+        body.classList.add('popup-open');
+    }
+}
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.body.classList.remove('popup-open');
+        }
+
 
         document.body.appendChild(content);
 
